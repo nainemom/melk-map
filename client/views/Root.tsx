@@ -1,5 +1,5 @@
 import { Button, Progress } from "@radix-ui/themes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VscRunAbove } from "react-icons/vsc";
 import {
   getHouses,
@@ -25,10 +25,16 @@ export function Root() {
   const [progress, setProgress] = useState<number>(0);
 
   const lastSavedHouses = useAsync(() => ofetch<House[]>(new URL('./tehran.json', window.location.origin + window.location.pathname).href));
-  const [houses, startSearch] = useAsyncFn(() => {
-    return getHouses(filters, (p) => {
+  const [houses, setHouses] = useState<House[]>([]);
+  useEffect(() => {
+    setHouses(lastSavedHouses.value ?? []);
+  }, [lastSavedHouses.value]);
+
+  const [crawlHouses, startCrawl] = useAsyncFn(() => {
+    return getHouses(filters, (p, currentHouses) => {
       setProgress(p);
       console.log(p);
+      setHouses(currentHouses);
     });
   }, [filters]);
 
@@ -36,19 +42,19 @@ export function Root() {
   return (
     <div className="w-svw h-svh relative">
       <HousesMap
-        houses={houses.value ?? lastSavedHouses.value ?? []}
+        houses={houses ?? []}
         mapStyle={mapStyle!}
       />
       <div className="absolute top-0 left-0 w-full p-2 flex items-center justify-center gap-2 backdrop-contrast-50 backdrop-blur-sm">
         <Progress size="2" max={1} value={progress} color="green" />
         <Button
           onClick={() => {
-            startSearch();
+            startCrawl();
           }}
           color="green"
           size="2"
           variant="classic"
-          loading={houses.loading}
+          loading={crawlHouses.loading}
         >
           <VscRunAbove />
           Start Crawl Divar

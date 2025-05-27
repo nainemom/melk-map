@@ -17,10 +17,12 @@
     "deck.gl": "^9.1.12",
     "mapbox-gl": "^3.12.0",
     "maplibre-gl": "^5.5.0",
+    "ofetch": "^1.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-map-gl": "^8.0.4",
+    "react-use": "^17.6.0",
     "recharts": "^2.15.3"
   },
   "devDependencies": {

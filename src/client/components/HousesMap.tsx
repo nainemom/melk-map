@@ -8,6 +8,19 @@ import {
 
 const mapStyle = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
+// eslint-disable-next-line react-refresh/only-export-components
+export const gradientStops: { t: number; color: [number, number, number], title: string }[] = [
+  { t: 0.00, color: [255, 255, 255], title: '0–15% (very cheap)' }, // white
+  { t: 0.15, color: [200, 255, 200], title: '15–20%' }, // mint green
+  { t: 0.20, color: [120, 220, 120], title: '20–35%' }, // light green
+  { t: 0.35, color: [0, 180, 0], title: '	35–50%' },     // green
+  { t: 0.5, color: [255, 255, 100], title: '50–65%' }, // yellow
+  { t: 0.65, color: [255, 180, 0], title: '65–75%' },   // orange
+  { t: 0.75, color: [255, 90, 0], title: '75–88%' },    // red
+  { t: 0.88, color: [255, 0, 0], title: '88–100% (very expensive)' },     // dark red
+  { t: 1.00, color: [140, 0, 0], title: 'Top 1–2% (extremely high-end)' },     // maroon
+];
+
 export function HousesMap({
   houses,
   children,
@@ -15,18 +28,6 @@ export function HousesMap({
   houses: House[],
   children?: ReactNode,
 }) {
-
-const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(() => [
-    { t: 0.00, color: [255, 255, 255] }, // white
-    { t: 0.15, color: [200, 255, 200] }, // mint green
-    { t: 0.20, color: [120, 220, 120] }, // light green
-    { t: 0.35, color: [0, 180, 0] },     // green
-    { t: 0.5, color: [255, 255, 100] }, // yellow
-    { t: 0.65, color: [255, 180, 0] },   // orange
-    { t: 0.75, color: [255, 90, 0] },    // red
-    { t: 0.88, color: [255, 0, 0] },     // dark red
-    { t: 1.00, color: [140, 0, 0] },     // maroon
-  ], []);
 
   const { min, max, data, latitude, longitude } = useMemo(() => {
     const data = houses.filter(x => typeof x.price === 'number' && x.location !== null && typeof x.location.lat === 'number' && typeof x.location.lng === 'number') ?? [];
@@ -38,7 +39,7 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
       longitude: data.length ? data.reduce((p, c)=>p + c.location!.lng, 0) / data.length : undefined,
       latitude: data.length ? data.reduce((p, c)=>p + c.location!.lat, 0) / data.length : undefined,
     };
-  }, [houses, gradientStops]);
+  }, [houses]);
 
 
   const [viewState, setViewState] = useState<MapViewState>({

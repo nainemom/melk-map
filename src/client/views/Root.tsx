@@ -6,8 +6,8 @@ import {
 } from "@/client/api";
 import { useAsync, useAsyncFn } from "react-use";
 import { ofetch } from "ofetch";
-import { HousesMap } from "@/client/components/HousesMap";
-import { VscPlay, VscSettingsGear } from "react-icons/vsc";
+import { gradientStops, HousesMap } from "@/client/components/HousesMap";
+import { VscInfo, VscPlay, VscSettingsGear } from "react-icons/vsc";
 import { HousesFilters } from "@/client/components/HousesFilters";
 
 
@@ -42,26 +42,35 @@ export function Root() {
 
   return (
     <div className="h-svh w-svw relative">
-      <div className="flex items-center justify-between backdrop-blur-sm bg-black z-10 absolute top-0 left-0 w-full p-2 gap-2">
-        <div className="flex items-center flex-col justify-between grow gap-1 h-full">
-          <label htmlFor="progress-bar" className="text-xs h-4">{progressText ? `${progressText}...` : ''}</label>
-          <progress id="progress-bar" value={progress} max="1" className="progress w-full h-2" />
-        </div>
-        <button
-          onClick={()=>document.querySelector<HTMLDialogElement>('#filters-dialog')!.showModal()}
-          disabled={crawlHouses.loading}
-          className="shrink-0 btn btn-sm btn-soft"
-        >
-          <VscSettingsGear className="size-4" /> Settings
-        </button>
+      <div className="flex items-center justify-end backdrop-blur-sm bg-black/20 z-10 absolute bottom-0 left-0 w-full h-12 p-2 gap-2">
+        { progress !== 0 && (
+          <div className="flex items-start flex-col justify-between grow gap-px h-full">
+            <label htmlFor="progress-bar" className="text-xs block">{progressText ? `${progressText}...` : ''}</label>
+            <progress id="progress-bar" value={progress} max="1" className="progress w-full h-2" />
+          </div>
+        ) }
         <button
           onClick={() => {
             startCrawl();
           }}
           disabled={crawlHouses.loading}
-          className="shrink-0 btn btn-sm btn-primary"
+          className="shrink-0 btn btn-sm btn-square btn-primary"
         >
-          <VscPlay className="size-4" /> Run
+          <VscPlay className="size-4" />
+        </button>
+        <button
+          onClick={()=>document.querySelector<HTMLDialogElement>('#filters-dialog')!.showModal()}
+          disabled={crawlHouses.loading}
+          className="shrink-0 btn btn-sm btn-square btn-soft"
+        >
+          <VscSettingsGear className="size-4" />
+        </button>
+        <button
+          onClick={()=>document.querySelector<HTMLDialogElement>('#about-dialog')!.showModal()}
+          disabled={crawlHouses.loading}
+          className="shrink-0 btn btn-sm btn-soft btn-square"
+        >
+          <VscInfo className="size-4" />
         </button>
       </div>
 
@@ -72,6 +81,28 @@ export function Root() {
             <form method="dialog" className="w-full">
               <HousesFilters value={filters} onChange={setFilters} />
               <div className="divider" />
+              <button className="btn btn-block btn-soft">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="about-dialog" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-xl">Melk Map</h3>
+          <h4 className="text-base italic mb-2 opacity-80">Real Estate Price Visualizer for All Iranian Cities</h4>
+          <p className="text-sm mb-4">
+            Melk Map is an <a href="https://github.com/nainemom/melk-map" target="_blank" className="link link-success">open-source</a> web app that crawls apartment listings from Divar.ir and visualizes real estate prices across all cities in Iran. Whether you're searching in Tehran, Mashhad, Isfahan, or smaller towns, Melk Map gives you a clear, data-driven view of the housing market.
+          </p>
+          <h3 className="font-bold text-lg mb-2">Map Legends</h3>
+          { gradientStops.map((gradientStop) => (
+            <div key={gradientStop.t} className="flex items-center gap-2 mb-2 text-sm">
+              <div className="rounded-full size-3" style={{ background: `rgba(${gradientStop.color.join(',')})`}}/>
+              <p className="">{gradientStop.title}</p>
+            </div>
+          ))}
+          <div className="modal-action">
+            <form method="dialog" className="w-full">
               <button className="btn btn-block btn-soft">Close</button>
             </form>
           </div>

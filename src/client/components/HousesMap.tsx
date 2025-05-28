@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState, type ReactNode } from "react";
 import DeckGL, { ScatterplotLayer, type MapViewState } from "deck.gl";
 import {
   type House,
-} from "@/api";
+} from "@/client/api";
 
 
 const mapStyle = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';

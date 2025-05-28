@@ -1,4 +1,4 @@
-import { getCities, type GetAllHousesFilters } from "@/api";
+import { getCities, type GetAllHousesFilters } from "@/client/api";
 import { useEffect, useState } from "react";
 import { useAsync } from "react-use";
 

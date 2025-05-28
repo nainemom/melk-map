@@ -1,11 +1,9 @@
-import { toEnglishDigits } from "@/utils/format";
-import { randomBetween } from "@/utils/number";
+import { toEnglishDigits } from "@/shared/utils/format";
+import { randomBetween } from "@/shared/utils/number";
 import { ofetch } from "ofetch";
 
-const CITY = '1'; // Tehran city ID
-
 const httpClient = ofetch.create({
-  baseURL: 'https://api.divar.ir',
+  baseURL: '/divar',
   retryDelay: 30000,
   retry: 5,
   retryStatusCodes: [429, 500],
@@ -13,6 +11,7 @@ const httpClient = ofetch.create({
   headers: {
     'Content-Type': 'application/json',
   },
+  cache: 'force-cache',
 })
 
 export type ProgressFunction<T> = (value: number, max: number, title: string, lastValue: T) => void;
@@ -112,31 +111,33 @@ export const getDistricts = async (cityId: string, progressFn?: ProgressFunction
   const districtsWithoutBbox: Omit<District, 'boundingBox'>[] = await httpClient(
     "/v8/postlist/w/filters",
     {
-      method: 'POST',
-      cache: 'force-cache',
-      body: {
-        city_ids: [cityId],
-        source_view: "FILTER",
-        data: {},
-      },
+      query: {
+        payload: btoa(JSON.stringify({
+          method: 'POST',
+          body: {
+            city_ids: [cityId],
+            source_view: "FILTER",
+            data: {},
+          },
+        }))
+      }
     }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ).then((resp: any) => {
     let ret: Omit<District, 'boundingBox'>[] = [];
     for (const widget of (resp?.page?.widget_list ?? [])) {
-      for (const subWidget of (widget?.data?.widget_list ?? [])) {
-        for (const district of (subWidget?.data?.neighborhoods?.options ?? [])) {
-          ret = [
-            ...ret,
-            {
-              title: district.title as string,
-              value: district.value as string,
-              hint: district.hint as string,
-              keywords: district.search_keywords.split('،').map((x: string) => x.trim()),
-              cityId,
-            },
-          ];
-        }
+      if (widget?.widget_type !== 'I_NEIGHBORHOOD_ROW') continue;
+      for (const district of (widget?.data?.neighborhoods?.options ?? [])) {
+        ret = [
+          ...ret,
+          {
+            title: district.title as string,
+            value: district.value as string,
+            hint: district.hint as string,
+            keywords: district.search_keywords.split('،').map((x: string) => x.trim()),
+            cityId,
+          },
+        ];
       }
     }
     return ret;
@@ -147,20 +148,23 @@ export const getDistricts = async (cityId: string, progressFn?: ProgressFunction
     progress(fetchedDistricts + 1, districtsWithoutBbox.length + 1, 'Fetching Districts Approximate Bounding Box');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const searchResult = await httpClient<any>("/v8/postlist/w/search", {
-      method: 'POST',
-      cache: 'force-cache',
-      body: {
-        city_ids: [cityId],
-        source_view: "FILTER",
-        search_data: {
-          form_data: {
-            data: {
-              category: { str: { value: "apartment-sell" } },
-              districts: { repeated_string: { value: [districtWithoutBbox.value] } },
-            }
-          }
-        },
-      },
+      query: {
+        payload: btoa(JSON.stringify({
+          method: 'POST',
+          body: {
+            city_ids: [cityId],
+            source_view: "FILTER",
+            search_data: {
+              form_data: {
+                data: {
+                  category: { str: { value: "apartment-sell" } },
+                  districts: { repeated_string: { value: [districtWithoutBbox.value] } },
+                }
+              }
+            },
+          },
+        }))
+      }
     });
     const bbox = searchResult?.map_data?.state?.camera_info?.bbox;
     if (!bbox || typeof bbox !== 'object' || typeof bbox.min_latitude !== 'number'|| typeof bbox.max_latitude !== 'number'|| typeof bbox.min_longitude !== 'number'|| typeof bbox.max_longitude !== 'number') throw new Error('unexpected error');
@@ -216,17 +220,21 @@ export const getDistrictHouses = async (filters: GetDistrictHousesFilters): Prom
   };
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const searchResult = await httpClient<any>("/v8/postlist/w/search", {
-    method: 'POST',
-    body: {
-      city_ids: [CITY],
-      source_view: 'FILTER',
-      disable_recommendation: true,
-      search_data: {
-        form_data: {
-          data: apiFilters,
+    query: {
+      payload: btoa(JSON.stringify({
+        method: 'POST',
+        body: {
+          source_view: 'FILTER',
+          city_ids: [filters.district.cityId],
+          disable_recommendation: true,
+          search_data: {
+            form_data: {
+              data: apiFilters,
+            },
+          },
         },
-      },
-    },
+      })),
+    }
   });
   const widgets = (searchResult?.list_widgets ?? []);
   

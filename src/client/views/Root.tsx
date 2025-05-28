@@ -3,12 +3,12 @@ import {
   getAllCityHouses,
   type GetAllHousesFilters,
   type House,
-} from "@/api";
+} from "@/client/api";
 import { useAsync, useAsyncFn } from "react-use";
 import { ofetch } from "ofetch";
-import { HousesMap } from "@/components/HousesMap";
+import { HousesMap } from "@/client/components/HousesMap";
 import { VscPlay, VscSettingsGear } from "react-icons/vsc";
-import { HousesFilters } from "@/components/HousesFilters";
+import { HousesFilters } from "@/client/components/HousesFilters";
 
 
 export function Root() {

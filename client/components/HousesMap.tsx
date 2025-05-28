@@ -29,18 +29,18 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
   ], []);
 
   const { min, max, data, latitude, longitude } = useMemo(() => {
-    const data = houses.filter(x => typeof x.unitPrice === 'number' && x.location !== null && typeof x.location.lat === 'number' && typeof x.location.lng === 'number') ?? [];
-    const sortedPrices = data.map(x => x.unitPrice!).sort((a, b) => a - b);
-    const center: NonNullable<House['location']> = {
-      lat: data.reduce((p, c)=>p + c.location!.lat, 0) / data.length,
-      lng: data.reduce((p, c)=>p + c.location!.lng, 0) / data.length,
-    };
+    const data = houses.filter(x => typeof x.price === 'number' && x.location !== null && typeof x.location.lat === 'number' && typeof x.location.lng === 'number') ?? [];
+    const sortedPrices = data.map(x => x.price!).sort((a, b) => a - b);
+    const center: [number, number] = [
+      data.reduce((p, c)=>p + c.location!.lng, 0) / data.length,
+      data.reduce((p, c)=>p + c.location!.lat, 0) / data.length,
+    ];
     return {
       data,
       min: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[1].t)],
       max: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[gradientStops.length - 2].t)],
-      latitude: isNaN(center.lat) ? 0 : center.lat,
-      longitude: isNaN(center.lng) ? 0 : center.lng,
+      longitude: isNaN(center[0]) ? 0 : center[0],
+      latitude: isNaN(center[1]) ? 0 : center[1],
     };
   }, [houses, gradientStops]);
 
@@ -52,7 +52,7 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
   });
 
   useEffect(() => {
-    setViewState(p => ({ ...p, latitude, longitude }))
+    setViewState(p => ({ ...p, latitude, longitude, zoom: 11 }))
   }, [latitude, longitude]);
 
     
@@ -61,12 +61,13 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
     data,
     getPosition: (d: House) => [d.location?.lng ?? 0, d.location?.lat ?? 0],
     getRadius: () => {
-      return 50;
+      return 80;
     },
     radiusUnits: "meters",
     getFillColor: (d: House) => {
-      const price = d.unitPrice ?? 0;
+      const price = d.price ?? 0;
       const t = (Math.max(min, Math.min(price, max)) - min) / (max - min);
+      let color: [number, number, number] = gradientStops[gradientStops.length - 1].color;
       for (let i = 0; i < gradientStops.length - 1; i++) {
         const curr = gradientStops[i];
         const next = gradientStops[i + 1];
@@ -76,20 +77,25 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
           const r = Math.round(curr.color[0] + (next.color[0] - curr.color[0]) * localT);
           const g = Math.round(curr.color[1] + (next.color[1] - curr.color[1]) * localT);
           const b = Math.round(curr.color[2] + (next.color[2] - curr.color[2]) * localT);
-          return [r, g, b];
+          color = [r, g, b];
         }
       }
 
-      return gradientStops[gradientStops.length - 1].color;
+      return [...color, d.location.exact ? 255 : 90];
     },
+    getLineColor: () => [0, 0, 0, 255],
+    getLineWidth: () => 2,
+    lineWidthUnits: 'meters',
     onClick: ({ object }) => {
-      alert(JSON.stringify(object, null, 4))
+      window.open(`https://divar.ir/v/${(object as House).token}`, '_blank');
     },
-    opacity: 0.9,
-    stroked: false,
+    opacity: 1,
+    stroked: true,
     pickable: true,
     updateTriggers: {
-      getRadius: [viewState.zoom],
+      getRadius: [viewState.zoom, viewState.latitude, viewState.longitude],
+      getLineWidth: [viewState.zoom, viewState.latitude, viewState.longitude],
+      getLineColor: [viewState.zoom, viewState.latitude, viewState.longitude],
     },
   });
 

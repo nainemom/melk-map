@@ -1,4 +1,5 @@
 import { toEnglishDigits } from "@/utils/format";
+import { randomBetween } from "@/utils/number";
 import { ofetch } from "ofetch";
 
 const CITY = '1'; // Tehran city ID
@@ -14,21 +15,22 @@ const httpClient = ofetch.create({
   },
 })
 
+export type ProgressFunction<T> = (value: number, max: number, title: string, lastValue: T) => void;
+
 export type House = {
-  location: { lat: number, lng: number } | null,
-  size: number | null,
-  beds: number | null,
-  totalPrice: number | null,
-  unitPrice: number | null,
-  elevator: boolean | null,
-  storage: boolean | null,
-  parking: boolean | null,
-  balcony: boolean | null,
-  yearBuilt: number | null,
-}
-export const getHouse = (id: string): Promise<House> => {
+  token: string,
+  location: {
+    lat: number,
+    lng: number,
+    exact: boolean,
+  },
+  size: number,
+  price: number, // per meter
+};
+
+export const getHouse = (token: string): Promise<House> => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return httpClient(`/v8/posts-v2/web/${id}`).then((resp: any) => {
+  return httpClient(`/v8/posts-v2/web/${token}`).then((resp: any) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let fields: Record<string, any> = {};
 
@@ -53,19 +55,12 @@ export const getHouse = (id: string): Promise<House> => {
         }
       }
     }
-
+    if (typeof fields.location?.latitude !== 'number' || typeof fields.location?.longitude !== 'number' || typeof fields['متراژ'] !== 'string' || fields['متراژ'] === '' || typeof fields['قیمت هر متر'] !== 'string' || fields['قیمت هر متر'].trim() === '') throw new Error('cannot parse');
     return {
-      location: typeof fields.location?.latitude === 'number' && typeof fields.location?.longitude === 'number' ? { lat: fields.location?.latitude, lng: fields.location.longitude } : null,
-      size: typeof fields['متراژ'] === 'string' && fields['متراژ'].trim() !== '' ? +fields['متراژ'] : null,
-      beds: typeof fields['اتاق'] === 'string' && fields['اتاق'].trim() !== '' ? +fields['اتاق'] : null,
-      // floor: typeof fields['طبقه'] === 'string' && fields['طبقه'].trim() !== '' ? fields['طبقه'].split(' ').filter(x=>!!x).map(x => +x) as [number, number] | [number] : null,
-      totalPrice: typeof fields['قیمت کل'] === 'string' && fields['قیمت کل'].trim() !== '' ? +fields['قیمت کل'] : null,
-      unitPrice: typeof fields['قیمت هر متر'] === 'string' && fields['قیمت هر متر'].trim() !== '' ? +fields['قیمت هر متر'] : null,
-      elevator: 'آسانسور ندارد' in fields || fields['آسانسور'] === false ? false : fields['آسانسور'] === true ? true : null,
-      storage: 'انباری ندارد' in fields || fields['انباری'] === false ? false : fields['انباری'] === true ? true : null,
-      parking: 'پارکینگ ندارد' in fields || fields['پارکینگ'] === false ? false : fields['پارکینگ'] === true ? true : null,
-      balcony: 'بالکن ندارد' in fields || fields['بالکن'] === false ? false : fields['بالکن'] === true ? true : null,
-      yearBuilt: typeof fields['ساخت'] === 'string' && fields['ساخت'] !== '' ? +fields['ساخت'] : null,
+      token,
+      location: { lat: fields.location?.latitude, lng: fields.location.longitude, exact: true },
+      size: +fields['متراژ'],
+      price: +fields['قیمت هر متر'],
     };
   });
 }
@@ -76,44 +71,99 @@ export type District = {
   value: string,
   hint: string,
   keywords: string[],
+  cityId: string,
+  boundingBox: {
+    minLat: number,
+    maxLat: number,
+    minLng: number,
+    maxLng: number,
+  },
 }
 
-export const getDistricts = (): Promise<District[]> => {
-  return httpClient(
+export const getDistricts = async (cityId: string, progressFn?: ProgressFunction<District[]>): Promise<District[]> => {
+  let returnValue: District[] = [];
+  const progress = (value: number, max: number, title: string) => {
+    progressFn?.(value, max, title, returnValue);
+  }
+
+  progress(0, 1, 'Fetching Districts');
+
+  const districtsWithoutBbox: Omit<District, 'boundingBox'>[] = await httpClient(
     "/v8/postlist/w/filters",
     {
       method: 'POST',
+      cache: 'force-cache',
       body: {
-        city_ids: [CITY],
+        city_ids: [cityId],
         source_view: "FILTER",
         data: {},
       },
     }
-  )
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  .then((resp: any) => {
-    let returnValue: District[] = [];
+  ).then((resp: any) => {
+    let ret: Omit<District, 'boundingBox'>[] = [];
     for (const widget of (resp?.page?.widget_list ?? [])) {
       for (const subWidget of (widget?.data?.widget_list ?? [])) {
         for (const district of (subWidget?.data?.neighborhoods?.options ?? [])) {
-          returnValue = [
-            ...returnValue,
+          ret = [
+            ...ret,
             {
               title: district.title as string,
               value: district.value as string,
               hint: district.hint as string,
-              keywords: district.search_keywords.split('،').map((x: string) => x.trim())
+              keywords: district.search_keywords.split('،').map((x: string) => x.trim()),
+              cityId,
             },
           ];
         }
       }
     }
-    return returnValue;
+    return ret;
   });
+
+  let fetchedDistricts = 0;
+  for (const districtWithoutBbox of districtsWithoutBbox) {
+    progress(fetchedDistricts + 1, districtsWithoutBbox.length + 1, 'Fetching Districts Approximate Bounding Box');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const searchResult = await httpClient<any>("/v8/postlist/w/search", {
+      method: 'POST',
+      cache: 'force-cache',
+      body: {
+        city_ids: [cityId],
+        source_view: "FILTER",
+        search_data: {
+          form_data: {
+            data: {
+              category: { str: { value: "apartment-sell" } },
+              districts: { repeated_string: { value: [districtWithoutBbox.value] } },
+            }
+          }
+        },
+      },
+    });
+    const bbox = searchResult?.map_data?.state?.camera_info?.bbox;
+    if (!bbox || typeof bbox !== 'object' || typeof bbox.min_latitude !== 'number'|| typeof bbox.max_latitude !== 'number'|| typeof bbox.min_longitude !== 'number'|| typeof bbox.max_longitude !== 'number') throw new Error('unexpected error');
+    returnValue = [
+      ...returnValue,
+      {
+        boundingBox: {
+          minLat: bbox.min_latitude!,
+          maxLat: bbox.max_latitude!,
+          minLng: bbox.min_longitude!,
+          maxLng: bbox.max_longitude!,
+        },
+        ...districtWithoutBbox,
+      }
+    ];
+    fetchedDistricts+=1;
+  }
+
+  return returnValue;
+  
 }
 
-export type SearchHousesFilters = {
-  district?: string[];
+export type GetDistrictHousesFilters = {
+  district: District;
   elevator?: boolean;
   parking?: boolean;
   balcony?: boolean;
@@ -121,90 +171,118 @@ export type SearchHousesFilters = {
   price?: [number, number];
 }
 
-export const getHousesIds = (filters: SearchHousesFilters): Promise<string[]> => {
-  return httpClient("/v8/postlist/w/search", {
+export const getDistrictHouses = async (filters: GetDistrictHousesFilters): Promise<House[]> => {
+  let returnValue: House[] = [];
+
+  const apiFilters = {
+    category: { str: { value: "apartment-sell" } },
+    districts: { repeated_string: { value: filters.district.value } },
+    ...(typeof filters.elevator !== 'undefined' && {
+      elevator: { boolean: { value: filters.elevator } },
+    }),
+    ...(typeof filters.parking !== 'undefined' && {
+      parking: { boolean: { value: filters.parking } },
+    }),
+    ...(typeof filters.balcony !== 'undefined' && {
+      balcony: { boolean: { value: filters.balcony } },
+    }),
+    ...(typeof filters.size !== 'undefined' && {
+      size: {number_range: { minimum: filters.size[0], maximum: filters.size[1] }},
+    }),
+    ...(typeof filters.price !== 'undefined' && {
+      price: {number_range: { minimum: filters.price[0], maximum: filters.price[1] }},
+    }),
+  };
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const searchResult = await httpClient<any>("/v8/postlist/w/search", {
     method: 'POST',
     body: {
       city_ids: [CITY],
       source_view: 'FILTER',
-      disable_recommendation: false,
+      disable_recommendation: true,
       search_data: {
         form_data: {
-          data: {
-            // bbox: {
-            //   repeated_float: {
-            //     value: [
-            //       { value: 51.4265289 },
-            //       { value: 35.7938423 },
-            //       { value: 51.4346771 },
-            //       { value: 35.8068733 },
-            //     ],
-            //   },
-            // },
-            deed_type: { repeated_string: { value: ['single_page'] } },
-            category: { str: { value: "apartment-sell" } },
-            ...(typeof filters.district !== 'undefined' && {
-              districts: { repeated_string: { value: filters.district } },
-            }),
-            ...(typeof filters.elevator !== 'undefined' && {
-              elevator: { boolean: { value: filters.elevator } },
-            }),
-            ...(typeof filters.parking !== 'undefined' && {
-              parking: { boolean: { value: filters.parking } },
-            }),
-            ...(typeof filters.balcony !== 'undefined' && {
-              balcony: { boolean: { value: filters.balcony } },
-            }),
-            ...(typeof filters.size !== 'undefined' && {
-              size: {number_range: { minimum: filters.size[0], maximum: filters.size[1] }},
-            }),
-            ...(typeof filters.price !== 'undefined' && {
-              price: {number_range: { minimum: filters.price[0], maximum: filters.price[1] }},
-            }),
-          },
+          data: apiFilters,
         },
       },
     },
-  })
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    .then((resp: any) => {
-      let returnValue: string[] = [];
-      for (const widget of (resp?.list_widgets ?? [])) {
-        if (widget?.widget_type !== 'POST_ROW' || !widget?.data?.middle_description_text?.includes('تومان') || !widget?.data?.token) continue;
-        returnValue = [...returnValue, widget.data.token];
-      }
-      return returnValue;
-    });
+  });
+  const widgets = (searchResult?.list_widgets ?? []);
+  
+  for (const widget of widgets) {
+    if (widget?.widget_type !== 'POST_ROW') continue;
+    const token = widget?.data?.token;
+    const title = widget?.data?.title; // "اپارتمان 105 متری موقعیت برای خانه اولی ها"
+    const description = widget?.data?.middle_description_text; // "۴۹۰,۰۰۰,۰۰۰ تومان"
+
+    if (!token || typeof token !== 'string' || !title || typeof title !== 'string' || !title.includes('متر') || !description || typeof description !== 'string' || !description.includes('تومان')) continue;
+
+    const size = +toEnglishDigits(title).replace(/.*?(\d+(?:[.,]\d+)?)\s*متر.*/s, "$1");
+    if (isNaN(size)) continue;
+
+    const totalPrice = +toEnglishDigits(description).replace(/[^\d\s]/g, '');
+    if (isNaN(totalPrice)) continue;
+
+    returnValue = [...returnValue, {
+      token,
+      size,
+      price: totalPrice / size,
+      location: {
+        lat: randomBetween(filters.district.boundingBox.minLat, filters.district.boundingBox.maxLat),
+        lng: randomBetween(filters.district.boundingBox.minLng, filters.district.boundingBox.maxLng),
+        exact: false,
+      },
+    }];
+  }
+  return returnValue;
 }
 
+export type GetAllHousesFilters = Omit<GetDistrictHousesFilters, 'district'> & {
+  cityId: string,
+};
 
-export const getHouses = async (filters: SearchHousesFilters, progressFn?: (value: number, lastValue: House[]) => void): Promise<House[]> => {
-    let returnValue: House[] = [];
-    let currentProgress = 0;
-    const progress = (value: number) => {
-      currentProgress = value;
-      progressFn?.(currentProgress, returnValue);
+export const getAllCityHouses = async (filters: GetAllHousesFilters, progressFn?: ProgressFunction<House[]>): Promise<House[]> => {
+  let returnValue: House[] = [];
+  const progress = (value: number, max: number, title: string) => {
+    progressFn?.(value, max, title, returnValue);
+  }
+  progress(0, 1, '');
+
+  // Step 1: prepare
+  const districts = await getDistricts(filters.cityId, (a, b, t) => {
+    progress((a / b), 3, t);
+  });
+
+  // Step 2: fetch
+  let passedDistricts = 0;
+  for (const district of districts) {
+    progress((passedDistricts / districts.length) + 1, 3, 'Fetching Districts Houses');
+    const districtHouses = await getDistrictHouses({
+      ...filters,
+      district,
+    });
+    returnValue = [...returnValue, ...districtHouses];
+
+    passedDistricts+=1;
+  }
+
+  // Step 3: verify
+  let passedHouses = 0;
+  const approximateHouses = [...returnValue];
+  for (const approximateHouse of approximateHouses) {
+    progress((passedHouses / approximateHouses.length) + 2, 3, 'Verifying Houses Data');
+    try {
+      const validatedHouse = await getHouse(approximateHouse.token);
+      returnValue = [
+        ...returnValue.filter(x => x !== approximateHouse),
+        validatedHouse,
+      ];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (_e) {
+      continue;
     }
-    progress(0);
-    const districts = await getDistricts();
-    
-    let passedDistricts = 0;
-    for (const district of districts) {
-      progress(passedDistricts / districts.length);
-      const districtHouseIds = await getHousesIds({
-        ...filters,
-        district: [district.value],
-      });
-
-
-      for (const houseId of districtHouseIds) {
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        returnValue = [...returnValue, await getHouse(houseId)];
-        progress((passedDistricts + (districtHouseIds.indexOf(houseId) / districtHouseIds.length)) / districts.length);
-      }
-
-      passedDistricts += 1;
-    }
-    progress(1);
-    return returnValue;
+    passedHouses += 1;
+    await new Promise((r) => setTimeout(r, 1100));
+  }
+  return returnValue;
 }

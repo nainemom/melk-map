@@ -1,0 +1,3782 @@
+[
+  {
+    "city_id": "5",
+    "name": "تبریز",
+    "parent_id": "891",
+    "city_slug": "tabriz"
+  },
+  {
+    "city_id": "853",
+    "name": "آذرشهر",
+    "parent_id": "891",
+    "city_slug": "azarshahr"
+  },
+  {
+    "city_id": "759",
+    "name": "اهر",
+    "parent_id": "891",
+    "city_slug": "ahar"
+  },
+  {
+    "city_id": "760",
+    "name": "بناب",
+    "parent_id": "891",
+    "city_slug": "bonab"
+  },
+  {
+    "city_id": "852",
+    "name": "سراب",
+    "parent_id": "891",
+    "city_slug": "sarab"
+  },
+  {
+    "city_id": "761",
+    "name": "سهند",
+    "parent_id": "891",
+    "city_slug": "sahand"
+  },
+  {
+    "city_id": "762",
+    "name": "مراغه",
+    "parent_id": "891",
+    "city_slug": "maragheh"
+  },
+  {
+    "city_id": "763",
+    "name": "مرند",
+    "parent_id": "891",
+    "city_slug": "marand"
+  },
+  {
+    "city_id": "764",
+    "name": "میانه",
+    "parent_id": "891",
+    "city_slug": "mianeh"
+  },
+  {
+    "city_id": "10",
+    "name": "ارومیه",
+    "parent_id": "881",
+    "city_slug": "urmia"
+  },
+  {
+    "city_id": "859",
+    "name": "اشنویه",
+    "parent_id": "881",
+    "city_slug": "oshnavieh"
+  },
+  {
+    "city_id": "765",
+    "name": "بوکان",
+    "parent_id": "881",
+    "city_slug": "bukan"
+  },
+  {
+    "city_id": "766",
+    "name": "پیرانشهر",
+    "parent_id": "881",
+    "city_slug": "piranshahr"
+  },
+  {
+    "city_id": "767",
+    "name": "خوی",
+    "parent_id": "881",
+    "city_slug": "khoy"
+  },
+  {
+    "city_id": "857",
+    "name": "سردشت",
+    "parent_id": "881",
+    "city_slug": "sardasht"
+  },
+  {
+    "city_id": "768",
+    "name": "سلماس",
+    "parent_id": "881",
+    "city_slug": "salmas"
+  },
+  {
+    "city_id": "858",
+    "name": "شاهین دژ",
+    "parent_id": "881",
+    "city_slug": "shahin-dej"
+  },
+  {
+    "city_id": "856",
+    "name": "ماکو",
+    "parent_id": "881",
+    "city_slug": "maku"
+  },
+  {
+    "city_id": "769",
+    "name": "مهاباد (آذربایجان غربی)",
+    "parent_id": "881",
+    "city_slug": "mahabad"
+  },
+  {
+    "city_id": "792",
+    "name": "میاندوآب",
+    "parent_id": "881",
+    "city_slug": "miandoab"
+  },
+  {
+    "city_id": "770",
+    "name": "نقده",
+    "parent_id": "881",
+    "city_slug": "naqadeh"
+  },
+  {
+    "city_id": "17",
+    "name": "اردبیل",
+    "parent_id": "906",
+    "city_slug": "ardabil"
+  },
+  {
+    "city_id": "771",
+    "name": "پارس\u200cآباد",
+    "parent_id": "906",
+    "city_slug": "parsabad"
+  },
+  {
+    "city_id": "772",
+    "name": "خلخال",
+    "parent_id": "906",
+    "city_slug": "khalkhal"
+  },
+  {
+    "city_id": "1741",
+    "name": "سرعین",
+    "parent_id": "906",
+    "city_slug": "sarein"
+  },
+  {
+    "city_id": "1743",
+    "name": "گرمی",
+    "parent_id": "906",
+    "city_slug": "germi"
+  },
+  {
+    "city_id": "773",
+    "name": "مشکین\u200cشهر",
+    "parent_id": "906",
+    "city_slug": "meshgin-shahr"
+  },
+  {
+    "city_id": "1742",
+    "name": "نمین",
+    "parent_id": "906",
+    "city_slug": "namin"
+  },
+  {
+    "city_id": "4",
+    "name": "اصفهان",
+    "parent_id": "890",
+    "city_slug": "isfahan"
+  },
+  {
+    "city_id": "1737",
+    "name": "آران و بیدگل",
+    "parent_id": "890",
+    "city_slug": "aran-va-bidgol"
+  },
+  {
+    "city_id": "1723",
+    "name": "ابریشم",
+    "parent_id": "890",
+    "city_slug": "abrisham-isfahan"
+  },
+  {
+    "city_id": "1747",
+    "name": "خمینی\u200cشهر",
+    "parent_id": "890",
+    "city_slug": "khomeyni-shahr"
+  },
+  {
+    "city_id": "1727",
+    "name": "خوانسار",
+    "parent_id": "890",
+    "city_slug": "khansar"
+  },
+  {
+    "city_id": "1750",
+    "name": "خور (اصفهان)",
+    "parent_id": "890",
+    "city_slug": "khour"
+  },
+  {
+    "city_id": "1724",
+    "name": "داران",
+    "parent_id": "890",
+    "city_slug": "daran"
+  },
+  {
+    "city_id": "1725",
+    "name": "سمیرم",
+    "parent_id": "890",
+    "city_slug": "semirom"
+  },
+  {
+    "city_id": "1744",
+    "name": "شاهین\u200cشهر",
+    "parent_id": "890",
+    "city_slug": "shahin-shahr"
+  },
+  {
+    "city_id": "849",
+    "name": "فلاورجان",
+    "parent_id": "890",
+    "city_slug": "falavarjan"
+  },
+  {
+    "city_id": "1745",
+    "name": "فولادشهر",
+    "parent_id": "890",
+    "city_slug": "foolad-shahr"
+  },
+  {
+    "city_id": "1746",
+    "name": "قمصر",
+    "parent_id": "890",
+    "city_slug": "ghamsar"
+  },
+  {
+    "city_id": "30",
+    "name": "کاشان",
+    "parent_id": "890",
+    "city_slug": "kashan"
+  },
+  {
+    "city_id": "848",
+    "name": "گلپایگان",
+    "parent_id": "890",
+    "city_slug": "golpayegan"
+  },
+  {
+    "city_id": "1749",
+    "name": "لنجان",
+    "parent_id": "890",
+    "city_slug": "lenjan"
+  },
+  {
+    "city_id": "1748",
+    "name": "مبارکه",
+    "parent_id": "890",
+    "city_slug": "mobarakeh"
+  },
+  {
+    "city_id": "31",
+    "name": "نجف\u200cآباد",
+    "parent_id": "890",
+    "city_slug": "najafabad"
+  },
+  {
+    "city_id": "2200",
+    "name": "شهرضا",
+    "parent_id": "890",
+    "city_slug": "shahreza-city"
+  },
+  {
+    "city_id": "2201",
+    "name": "برخوار",
+    "parent_id": "890",
+    "city_slug": "barkhaar"
+  },
+  {
+    "city_id": "2202",
+    "name": "اردستان",
+    "parent_id": "890",
+    "city_slug": "ardestaan"
+  },
+  {
+    "city_id": "2203",
+    "name": "بوئین و میاندشت",
+    "parent_id": "890",
+    "city_slug": "booyin-va-miyaandasht"
+  },
+  {
+    "city_id": "2204",
+    "name": "تیران",
+    "parent_id": "890",
+    "city_slug": "tiraan"
+  },
+  {
+    "city_id": "2205",
+    "name": "جرقویه",
+    "parent_id": "890",
+    "city_slug": "jarghuye"
+  },
+  {
+    "city_id": "2206",
+    "name": "چادگان",
+    "parent_id": "890",
+    "city_slug": "chaadgaan"
+  },
+  {
+    "city_id": "2207",
+    "name": "دهاقان",
+    "parent_id": "890",
+    "city_slug": "dahaaghan"
+  },
+  {
+    "city_id": "2208",
+    "name": "فریدونشهر",
+    "parent_id": "890",
+    "city_slug": "fereydoonshahr"
+  },
+  {
+    "city_id": "2209",
+    "name": "نائین",
+    "parent_id": "890",
+    "city_slug": "naaeein"
+  },
+  {
+    "city_id": "2210",
+    "name": "نطنز",
+    "parent_id": "890",
+    "city_slug": "natanz"
+  },
+  {
+    "city_id": "2211",
+    "name": "هرند",
+    "parent_id": "890",
+    "city_slug": "harand"
+  },
+  {
+    "city_id": "2212",
+    "name": "ورزنه",
+    "parent_id": "890",
+    "city_slug": "varzaneh"
+  },
+  {
+    "city_id": "2213",
+    "name": "اژیه",
+    "parent_id": "890",
+    "city_slug": "ezhye"
+  },
+  {
+    "city_id": "2214",
+    "name": "انارک",
+    "parent_id": "890",
+    "city_slug": "anaarak"
+  },
+  {
+    "city_id": "2215",
+    "name": "بادرود",
+    "parent_id": "890",
+    "city_slug": "badrood"
+  },
+  {
+    "city_id": "2216",
+    "name": "باغ بهادران",
+    "parent_id": "890",
+    "city_slug": "baagh-bahadoraan"
+  },
+  {
+    "city_id": "2217",
+    "name": "برزک",
+    "parent_id": "890",
+    "city_slug": "barzak"
+  },
+  {
+    "city_id": "2218",
+    "name": "پادنا",
+    "parent_id": "890",
+    "city_slug": "paadnaa"
+  },
+  {
+    "city_id": "2219",
+    "name": "پادنا علیا",
+    "parent_id": "890",
+    "city_slug": "paadnaa-olyaa"
+  },
+  {
+    "city_id": "2220",
+    "name": "پیر بکران",
+    "parent_id": "890",
+    "city_slug": "pir-bakraan"
+  },
+  {
+    "city_id": "2221",
+    "name": "چنارود",
+    "parent_id": "890",
+    "city_slug": "chenarood"
+  },
+  {
+    "city_id": "2222",
+    "name": "حبیب آباد",
+    "parent_id": "890",
+    "city_slug": "habib-abaad"
+  },
+  {
+    "city_id": "2223",
+    "name": "دهق",
+    "parent_id": "890",
+    "city_slug": "dehaq"
+  },
+  {
+    "city_id": "2224",
+    "name": "رامشه",
+    "parent_id": "890",
+    "city_slug": "raamesheh"
+  },
+  {
+    "city_id": "2225",
+    "name": "رودشت",
+    "parent_id": "890",
+    "city_slug": "roodasht"
+  },
+  {
+    "city_id": "2226",
+    "name": "زنده رود",
+    "parent_id": "890",
+    "city_slug": "zendeh-rood"
+  },
+  {
+    "city_id": "2227",
+    "name": "زواره",
+    "parent_id": "890",
+    "city_slug": "zavaareh"
+  },
+  {
+    "city_id": "2228",
+    "name": "زیباشهر",
+    "parent_id": "890",
+    "city_slug": "zibaashahr"
+  },
+  {
+    "city_id": "2229",
+    "name": "سیستان",
+    "parent_id": "890",
+    "city_slug": "seestaan"
+  },
+  {
+    "city_id": "2230",
+    "name": "عسگران",
+    "parent_id": "890",
+    "city_slug": "asgaraan"
+  },
+  {
+    "city_id": "2231",
+    "name": "قهدریجان",
+    "parent_id": "890",
+    "city_slug": "ghahderijaan"
+  },
+  {
+    "city_id": "2232",
+    "name": "کرچمبو",
+    "parent_id": "890",
+    "city_slug": "kerchambu"
+  },
+  {
+    "city_id": "2233",
+    "name": "کوهپایه",
+    "parent_id": "890",
+    "city_slug": "koohpaye"
+  },
+  {
+    "city_id": "2234",
+    "name": "کویرات",
+    "parent_id": "890",
+    "city_slug": "kavirat"
+  },
+  {
+    "city_id": "2235",
+    "name": "مهاباد (اصفهان)",
+    "parent_id": "890",
+    "city_slug": "mahabad-city"
+  },
+  {
+    "city_id": "2236",
+    "name": "موگوئی",
+    "parent_id": "890",
+    "city_slug": "mogouyi"
+  },
+  {
+    "city_id": "2237",
+    "name": "میمه",
+    "parent_id": "890",
+    "city_slug": "meymeh"
+  },
+  {
+    "city_id": "2238",
+    "name": "نیاسر",
+    "parent_id": "890",
+    "city_slug": "niasar"
+  },
+  {
+    "city_id": "2239",
+    "name": "وردشت",
+    "parent_id": "890",
+    "city_slug": "vardasht"
+  },
+  {
+    "city_id": "2",
+    "name": "کرج",
+    "parent_id": "895",
+    "city_slug": "karaj"
+  },
+  {
+    "city_id": "1722",
+    "name": "آسارا",
+    "parent_id": "895",
+    "city_slug": "asara"
+  },
+  {
+    "city_id": "1721",
+    "name": "اشتهارد",
+    "parent_id": "895",
+    "city_slug": "eshtehard"
+  },
+  {
+    "city_id": "1739",
+    "name": "تنکمان",
+    "parent_id": "895",
+    "city_slug": "tankaman"
+  },
+  {
+    "city_id": "1740",
+    "name": "چهارباغ",
+    "parent_id": "895",
+    "city_slug": "charbagh-alborz"
+  },
+  {
+    "city_id": "850",
+    "name": "طالقان",
+    "parent_id": "895",
+    "city_slug": "taleqan"
+  },
+  {
+    "city_id": "1751",
+    "name": "فردیس",
+    "parent_id": "895",
+    "city_slug": "fardis-city"
+  },
+  {
+    "city_id": "1738",
+    "name": "کوهسار",
+    "parent_id": "895",
+    "city_slug": "koohsar"
+  },
+  {
+    "city_id": "1720",
+    "name": "گرمدره",
+    "parent_id": "895",
+    "city_slug": "garmdareh"
+  },
+  {
+    "city_id": "1753",
+    "name": "ماهدشت",
+    "parent_id": "895",
+    "city_slug": "mahdasht-city"
+  },
+  {
+    "city_id": "1752",
+    "name": "محمدشهر",
+    "parent_id": "895",
+    "city_slug": "mohammad-shahr"
+  },
+  {
+    "city_id": "774",
+    "name": "نظرآباد",
+    "parent_id": "895",
+    "city_slug": "nazarabad"
+  },
+  {
+    "city_id": "1754",
+    "name": "هشتگرد",
+    "parent_id": "895",
+    "city_slug": "hashtgerd-city"
+  },
+  {
+    "city_id": "775",
+    "name": "آبدانان",
+    "parent_id": "888",
+    "city_slug": "abdanan"
+  },
+  {
+    "city_id": "32",
+    "name": "ایلام",
+    "parent_id": "888",
+    "city_slug": "ilam"
+  },
+  {
+    "city_id": "776",
+    "name": "ایوان",
+    "parent_id": "888",
+    "city_slug": "eyvan"
+  },
+  {
+    "city_id": "777",
+    "name": "دهلران",
+    "parent_id": "888",
+    "city_slug": "dehloran"
+  },
+  {
+    "city_id": "1823",
+    "name": "مهران",
+    "parent_id": "888",
+    "city_slug": "mehran"
+  },
+  {
+    "city_id": "778",
+    "name": "برازجان",
+    "parent_id": "900",
+    "city_slug": "borazjan"
+  },
+  {
+    "city_id": "1756",
+    "name": "بندر دیر",
+    "parent_id": "900",
+    "city_slug": "dayyer"
+  },
+  {
+    "city_id": "779",
+    "name": "بندر کنگان",
+    "parent_id": "900",
+    "city_slug": "bandar-kangan"
+  },
+  {
+    "city_id": "780",
+    "name": "بندر گناوه",
+    "parent_id": "900",
+    "city_slug": "bandar-ganaveh"
+  },
+  {
+    "city_id": "25",
+    "name": "بوشهر",
+    "parent_id": "900",
+    "city_slug": "bushehr"
+  },
+  {
+    "city_id": "1757",
+    "name": "جم",
+    "parent_id": "900",
+    "city_slug": "jam"
+  },
+  {
+    "city_id": "1755",
+    "name": "خورموج",
+    "parent_id": "900",
+    "city_slug": "khormoj"
+  },
+  {
+    "city_id": "1",
+    "name": "تهران",
+    "parent_id": "904",
+    "city_slug": "tehran"
+  },
+  {
+    "city_id": "1709",
+    "name": "آبسرد",
+    "parent_id": "904",
+    "city_slug": "absard"
+  },
+  {
+    "city_id": "1715",
+    "name": "آبعلی",
+    "parent_id": "904",
+    "city_slug": "abali"
+  },
+  {
+    "city_id": "1714",
+    "name": "ارجمند",
+    "parent_id": "904",
+    "city_slug": "arjmand"
+  },
+  {
+    "city_id": "29",
+    "name": "اسلام\u200cشهر",
+    "parent_id": "904",
+    "city_slug": "eslamshahr"
+  },
+  {
+    "city_id": "1764",
+    "name": "اندیشه",
+    "parent_id": "904",
+    "city_slug": "andisheh-new-town"
+  },
+  {
+    "city_id": "1707",
+    "name": "باقرشهر",
+    "parent_id": "904",
+    "city_slug": "baghershahr"
+  },
+  {
+    "city_id": "1768",
+    "name": "بومهن",
+    "parent_id": "904",
+    "city_slug": "bumehen"
+  },
+  {
+    "city_id": "1760",
+    "name": "پاکدشت",
+    "parent_id": "904",
+    "city_slug": "pakdasht-city"
+  },
+  {
+    "city_id": "1767",
+    "name": "پردیس",
+    "parent_id": "904",
+    "city_slug": "pardis-city"
+  },
+  {
+    "city_id": "1766",
+    "name": "پرند",
+    "parent_id": "904",
+    "city_slug": "parand-city"
+  },
+  {
+    "city_id": "781",
+    "name": "پیشوا",
+    "parent_id": "904",
+    "city_slug": "pishva"
+  },
+  {
+    "city_id": "1718",
+    "name": "جوادآباد",
+    "parent_id": "904",
+    "city_slug": "javadabad"
+  },
+  {
+    "city_id": "782",
+    "name": "چهاردانگه",
+    "parent_id": "904",
+    "city_slug": "chahar-dangeh"
+  },
+  {
+    "city_id": "783",
+    "name": "دماوند",
+    "parent_id": "904",
+    "city_slug": "damavand"
+  },
+  {
+    "city_id": "1765",
+    "name": "رباط\u200cکریم",
+    "parent_id": "904",
+    "city_slug": "robat-karim"
+  },
+  {
+    "city_id": "1769",
+    "name": "رودهن",
+    "parent_id": "904",
+    "city_slug": "rudehen"
+  },
+  {
+    "city_id": "1763",
+    "name": "ری",
+    "parent_id": "904",
+    "city_slug": "shahre-rey"
+  },
+  {
+    "city_id": "1713",
+    "name": "شاهدشهر",
+    "parent_id": "904",
+    "city_slug": "shahedshahr"
+  },
+  {
+    "city_id": "1717",
+    "name": "شمشک",
+    "parent_id": "904",
+    "city_slug": "shemshak"
+  },
+  {
+    "city_id": "1759",
+    "name": "شهریار",
+    "parent_id": "904",
+    "city_slug": "shahriar-city"
+  },
+  {
+    "city_id": "1712",
+    "name": "صباشهر",
+    "parent_id": "904",
+    "city_slug": "sabashahr"
+  },
+  {
+    "city_id": "1710",
+    "name": "صفادشت",
+    "parent_id": "904",
+    "city_slug": "safadasht-industrial-city"
+  },
+  {
+    "city_id": "1716",
+    "name": "فردوسیه",
+    "parent_id": "904",
+    "city_slug": "ferdosiye"
+  },
+  {
+    "city_id": "1772",
+    "name": "فشم",
+    "parent_id": "904",
+    "city_slug": "fasham-city"
+  },
+  {
+    "city_id": "1770",
+    "name": "فیروزکوه",
+    "parent_id": "904",
+    "city_slug": "firuzkooh"
+  },
+  {
+    "city_id": "1758",
+    "name": "قدس",
+    "parent_id": "904",
+    "city_slug": "qods-city"
+  },
+  {
+    "city_id": "1761",
+    "name": "قرچک",
+    "parent_id": "904",
+    "city_slug": "qarchak-city"
+  },
+  {
+    "city_id": "1708",
+    "name": "کهریزک",
+    "parent_id": "904",
+    "city_slug": "kahrizak"
+  },
+  {
+    "city_id": "1719",
+    "name": "کیلان",
+    "parent_id": "904",
+    "city_slug": "kilan"
+  },
+  {
+    "city_id": "1706",
+    "name": "گلستان",
+    "parent_id": "904",
+    "city_slug": "golestan-baharestan"
+  },
+  {
+    "city_id": "1771",
+    "name": "لواسان",
+    "parent_id": "904",
+    "city_slug": "lavasan-city"
+  },
+  {
+    "city_id": "784",
+    "name": "نسیم\u200cشهر",
+    "parent_id": "904",
+    "city_slug": "nasimshahr"
+  },
+  {
+    "city_id": "1711",
+    "name": "وحیدیه",
+    "parent_id": "904",
+    "city_slug": "vahidieh"
+  },
+  {
+    "city_id": "1762",
+    "name": "ورامین",
+    "parent_id": "904",
+    "city_slug": "varamin-city"
+  },
+  {
+    "city_id": "785",
+    "name": "بروجن",
+    "parent_id": "903",
+    "city_slug": "boroujen"
+  },
+  {
+    "city_id": "1833",
+    "name": "سامان",
+    "parent_id": "903",
+    "city_slug": "saman-city"
+  },
+  {
+    "city_id": "36",
+    "name": "شهرکرد",
+    "parent_id": "903",
+    "city_slug": "shahrekord"
+  },
+  {
+    "city_id": "786",
+    "name": "فرخ\u200cشهر",
+    "parent_id": "903",
+    "city_slug": "farrokhshahr"
+  },
+  {
+    "city_id": "787",
+    "name": "لردگان",
+    "parent_id": "903",
+    "city_slug": "lordegan"
+  },
+  {
+    "city_id": "34",
+    "name": "بیرجند",
+    "parent_id": "876",
+    "city_slug": "birjand"
+  },
+  {
+    "city_id": "788",
+    "name": "طبس",
+    "parent_id": "876",
+    "city_slug": "tabas"
+  },
+  {
+    "city_id": "789",
+    "name": "فردوس",
+    "parent_id": "876",
+    "city_slug": "ferdows"
+  },
+  {
+    "city_id": "790",
+    "name": "قاين",
+    "parent_id": "876",
+    "city_slug": "ghayen"
+  },
+  {
+    "city_id": "3",
+    "name": "مشهد",
+    "parent_id": "880",
+    "city_slug": "mashhad"
+  },
+  {
+    "city_id": "1735",
+    "name": "بردسکن",
+    "parent_id": "880",
+    "city_slug": "bardaskan"
+  },
+  {
+    "city_id": "1729",
+    "name": "تایباد",
+    "parent_id": "880",
+    "city_slug": "taybad"
+  },
+  {
+    "city_id": "791",
+    "name": "تربت جام",
+    "parent_id": "880",
+    "city_slug": "torbat-jam"
+  },
+  {
+    "city_id": "1776",
+    "name": "تربت\u200cحیدریه",
+    "parent_id": "880",
+    "city_slug": "torbat-heydariyeh"
+  },
+  {
+    "city_id": "1732",
+    "name": "چناران",
+    "parent_id": "880",
+    "city_slug": "chenaran"
+  },
+  {
+    "city_id": "1736",
+    "name": "خواف",
+    "parent_id": "880",
+    "city_slug": "khaf"
+  },
+  {
+    "city_id": "316",
+    "name": "سبزوار",
+    "parent_id": "880",
+    "city_slug": "sabzevar"
+  },
+  {
+    "city_id": "1775",
+    "name": "شاندیز",
+    "parent_id": "880",
+    "city_slug": "shandiz-city"
+  },
+  {
+    "city_id": "1774",
+    "name": "طرقبه",
+    "parent_id": "880",
+    "city_slug": "torghabeh-city"
+  },
+  {
+    "city_id": "1733",
+    "name": "قاسم\u200cآباد (خواف)",
+    "parent_id": "880",
+    "city_slug": "qasemabad-khaf"
+  },
+  {
+    "city_id": "1777",
+    "name": "قوچان",
+    "parent_id": "880",
+    "city_slug": "quchan"
+  },
+  {
+    "city_id": "1773",
+    "name": "گلبهار",
+    "parent_id": "880",
+    "city_slug": "golbahar-city"
+  },
+  {
+    "city_id": "847",
+    "name": "گناباد",
+    "parent_id": "880",
+    "city_slug": "gonabad"
+  },
+  {
+    "city_id": "1778",
+    "name": "ملک\u200cآباد",
+    "parent_id": "880",
+    "city_slug": "molkabad"
+  },
+  {
+    "city_id": "318",
+    "name": "نیشابور",
+    "parent_id": "880",
+    "city_slug": "neyshabur"
+  },
+  {
+    "city_id": "2946",
+    "name": "کاشمر",
+    "parent_id": "880",
+    "city_slug": "kasmar"
+  },
+  {
+    "city_id": "2947",
+    "name": "آبکوه",
+    "parent_id": "880",
+    "city_slug": "abkuh-city"
+  },
+  {
+    "city_id": "2948",
+    "name": "اسحاق آباد",
+    "parent_id": "880",
+    "city_slug": "es-haq-abad"
+  },
+  {
+    "city_id": "2949",
+    "name": "انابد",
+    "parent_id": "880",
+    "city_slug": "anabad"
+  },
+  {
+    "city_id": "2950",
+    "name": "باجگیران",
+    "parent_id": "880",
+    "city_slug": "bajgiran"
+  },
+  {
+    "city_id": "2951",
+    "name": "باخزر",
+    "parent_id": "880",
+    "city_slug": "bakhzar"
+  },
+  {
+    "city_id": "2952",
+    "name": "باشتین",
+    "parent_id": "880",
+    "city_slug": "bashtin"
+  },
+  {
+    "city_id": "2953",
+    "name": "بالا ولایت",
+    "parent_id": "880",
+    "city_slug": "bala-velayat"
+  },
+  {
+    "city_id": "2954",
+    "name": "بایک",
+    "parent_id": "880",
+    "city_slug": "bayk"
+  },
+  {
+    "city_id": "2955",
+    "name": "بجستان",
+    "parent_id": "880",
+    "city_slug": "bajestan"
+  },
+  {
+    "city_id": "2956",
+    "name": "بررود",
+    "parent_id": "880",
+    "city_slug": "barrud"
+  },
+  {
+    "city_id": "2957",
+    "name": "بوژگان",
+    "parent_id": "880",
+    "city_slug": "bozhgan"
+  },
+  {
+    "city_id": "2958",
+    "name": "پائین جام",
+    "parent_id": "880",
+    "city_slug": "paeen-jam"
+  },
+  {
+    "city_id": "2959",
+    "name": "جغتای",
+    "parent_id": "880",
+    "city_slug": "joghatai"
+  },
+  {
+    "city_id": "2960",
+    "name": "جلگه رخ",
+    "parent_id": "880",
+    "city_slug": "jolge-rokh"
+  },
+  {
+    "city_id": "2961",
+    "name": "جنت آباد",
+    "parent_id": "880",
+    "city_slug": "janat-abad"
+  },
+  {
+    "city_id": "2962",
+    "name": "جنگل",
+    "parent_id": "880",
+    "city_slug": "jangal"
+  },
+  {
+    "city_id": "2963",
+    "name": "جوین",
+    "parent_id": "880",
+    "city_slug": "jovin"
+  },
+  {
+    "city_id": "2964",
+    "name": "چاپشلو",
+    "parent_id": "880",
+    "city_slug": "chapeshlu"
+  },
+  {
+    "city_id": "2965",
+    "name": "خلیل آباد",
+    "parent_id": "880",
+    "city_slug": "khalil-abad-city"
+  },
+  {
+    "city_id": "2966",
+    "name": "خوشاب",
+    "parent_id": "880",
+    "city_slug": "khoshab"
+  },
+  {
+    "city_id": "2967",
+    "name": "داورزن",
+    "parent_id": "880",
+    "city_slug": "davarzan"
+  },
+  {
+    "city_id": "2968",
+    "name": "درگز",
+    "parent_id": "880",
+    "city_slug": "dargaz"
+  },
+  {
+    "city_id": "2969",
+    "name": "رادکان",
+    "parent_id": "880",
+    "city_slug": "radkan"
+  },
+  {
+    "city_id": "2970",
+    "name": "رشتخوار",
+    "parent_id": "880",
+    "city_slug": "reshtkhar"
+  },
+  {
+    "city_id": "2971",
+    "name": "رضویه",
+    "parent_id": "880",
+    "city_slug": "razaviye-city"
+  },
+  {
+    "city_id": "2972",
+    "name": "روداب",
+    "parent_id": "880",
+    "city_slug": "rudab"
+  },
+  {
+    "city_id": "2973",
+    "name": "زاوه",
+    "parent_id": "880",
+    "city_slug": "zaveh"
+  },
+  {
+    "city_id": "2974",
+    "name": "زاوین",
+    "parent_id": "880",
+    "city_slug": "zavin"
+  },
+  {
+    "city_id": "2975",
+    "name": "زبرخان",
+    "parent_id": "880",
+    "city_slug": "zabarkhan"
+  },
+  {
+    "city_id": "2976",
+    "name": "سرخس",
+    "parent_id": "880",
+    "city_slug": "sarakhs"
+  },
+  {
+    "city_id": "2977",
+    "name": "سرولایت",
+    "parent_id": "880",
+    "city_slug": "sarvelayat"
+  },
+  {
+    "city_id": "2978",
+    "name": "سلامی",
+    "parent_id": "880",
+    "city_slug": "salami"
+  },
+  {
+    "city_id": "2979",
+    "name": "سلیمان",
+    "parent_id": "880",
+    "city_slug": "soleyman"
+  },
+  {
+    "city_id": "2980",
+    "name": "سنگان",
+    "parent_id": "880",
+    "city_slug": "sangan"
+  },
+  {
+    "city_id": "2981",
+    "name": "سیدآباد",
+    "parent_id": "880",
+    "city_slug": "seyyedabad"
+  },
+  {
+    "city_id": "2982",
+    "name": "شادمهر",
+    "parent_id": "880",
+    "city_slug": "shadmehr"
+  },
+  {
+    "city_id": "2983",
+    "name": "شامکان",
+    "parent_id": "880",
+    "city_slug": "shamkan"
+  },
+  {
+    "city_id": "2984",
+    "name": "ششتمد",
+    "parent_id": "880",
+    "city_slug": "sheshtamad"
+  },
+  {
+    "city_id": "2985",
+    "name": "ششطراز",
+    "parent_id": "880",
+    "city_slug": "sheshtaraz"
+  },
+  {
+    "city_id": "2986",
+    "name": "شهرآباد",
+    "parent_id": "880",
+    "city_slug": "shahrabad"
+  },
+  {
+    "city_id": "2987",
+    "name": "صالح آباد",
+    "parent_id": "880",
+    "city_slug": "saleh-abad"
+  },
+  {
+    "city_id": "2988",
+    "name": "طاغنکوه",
+    "parent_id": "880",
+    "city_slug": "taghankooh"
+  },
+  {
+    "city_id": "2989",
+    "name": "عطاملک",
+    "parent_id": "880",
+    "city_slug": "atamalek"
+  },
+  {
+    "city_id": "2990",
+    "name": "فرح دشت",
+    "parent_id": "880",
+    "city_slug": "farah-dasht"
+  },
+  {
+    "city_id": "2991",
+    "name": "فریمان",
+    "parent_id": "880",
+    "city_slug": "fariman"
+  },
+  {
+    "city_id": "2992",
+    "name": "فیروزه",
+    "parent_id": "880",
+    "city_slug": "firuzeh"
+  },
+  {
+    "city_id": "2993",
+    "name": "قلندر آباد",
+    "parent_id": "880",
+    "city_slug": "ghalandar-abad"
+  },
+  {
+    "city_id": "2994",
+    "name": "کاخک",
+    "parent_id": "880",
+    "city_slug": "kakhak"
+  },
+  {
+    "city_id": "2995",
+    "name": "کدکن",
+    "parent_id": "880",
+    "city_slug": "kadkan"
+  },
+  {
+    "city_id": "2996",
+    "name": "کلات",
+    "parent_id": "880",
+    "city_slug": "kalat"
+  },
+  {
+    "city_id": "2997",
+    "name": "کوهسرخ",
+    "parent_id": "880",
+    "city_slug": "koohsorkh"
+  },
+  {
+    "city_id": "2998",
+    "name": "گلمکان",
+    "parent_id": "880",
+    "city_slug": "golmakan"
+  },
+  {
+    "city_id": "2999",
+    "name": "لطف آباد",
+    "parent_id": "880",
+    "city_slug": "lotf-abad"
+  },
+  {
+    "city_id": "3000",
+    "name": "مرزداران",
+    "parent_id": "880",
+    "city_slug": "marzdaran-city"
+  },
+  {
+    "city_id": "3001",
+    "name": "مشکان",
+    "parent_id": "880",
+    "city_slug": "moshkan"
+  },
+  {
+    "city_id": "3002",
+    "name": "مه ولات",
+    "parent_id": "880",
+    "city_slug": "mahvelat"
+  },
+  {
+    "city_id": "3003",
+    "name": "میان جلگه",
+    "parent_id": "880",
+    "city_slug": "mian-jolgeh"
+  },
+  {
+    "city_id": "3004",
+    "name": "میان ولایت",
+    "parent_id": "880",
+    "city_slug": "mian-velayat"
+  },
+  {
+    "city_id": "3005",
+    "name": "نصر آباد",
+    "parent_id": "880",
+    "city_slug": "nasr-abad-city"
+  },
+  {
+    "city_id": "3006",
+    "name": "نوخندان",
+    "parent_id": "880",
+    "city_slug": "nokhandan"
+  },
+  {
+    "city_id": "3007",
+    "name": "نوده انقلاب",
+    "parent_id": "880",
+    "city_slug": "nodeh-enghelab"
+  },
+  {
+    "city_id": "3008",
+    "name": "هزار مسجد",
+    "parent_id": "880",
+    "city_slug": "hezar-masjed"
+  },
+  {
+    "city_id": "3009",
+    "name": "هلالی",
+    "parent_id": "880",
+    "city_slug": "helali"
+  },
+  {
+    "city_id": "3010",
+    "name": "یونسی",
+    "parent_id": "880",
+    "city_slug": "younesi"
+  },
+  {
+    "city_id": "3011",
+    "name": "جلگه زوزن",
+    "parent_id": "880",
+    "city_slug": "jolgeh-zoozan"
+  },
+  {
+    "city_id": "793",
+    "name": "آشخانه",
+    "parent_id": "896",
+    "city_slug": "ashkhaneh"
+  },
+  {
+    "city_id": "794",
+    "name": "اسفراین",
+    "parent_id": "896",
+    "city_slug": "esfarayen"
+  },
+  {
+    "city_id": "39",
+    "name": "بجنورد",
+    "parent_id": "896",
+    "city_slug": "bojnurd"
+  },
+  {
+    "city_id": "795",
+    "name": "شیروان",
+    "parent_id": "896",
+    "city_slug": "shirvan"
+  },
+  {
+    "city_id": "7",
+    "name": "اهواز",
+    "parent_id": "902",
+    "city_slug": "ahvaz"
+  },
+  {
+    "city_id": "24",
+    "name": "آبادان",
+    "parent_id": "902",
+    "city_slug": "abadan"
+  },
+  {
+    "city_id": "1779",
+    "name": "امیدیه",
+    "parent_id": "902",
+    "city_slug": "omidiyeh"
+  },
+  {
+    "city_id": "796",
+    "name": "اندیمشک",
+    "parent_id": "902",
+    "city_slug": "andimeshk"
+  },
+  {
+    "city_id": "797",
+    "name": "ایذه",
+    "parent_id": "902",
+    "city_slug": "izeh"
+  },
+  {
+    "city_id": "798",
+    "name": "بندر امام خمینی",
+    "parent_id": "902",
+    "city_slug": "bandar-Imam-khomeini"
+  },
+  {
+    "city_id": "37",
+    "name": "بندر ماهشهر",
+    "parent_id": "902",
+    "city_slug": "mahshahr"
+  },
+  {
+    "city_id": "314",
+    "name": "بهبهان",
+    "parent_id": "902",
+    "city_slug": "behbahan"
+  },
+  {
+    "city_id": "1782",
+    "name": "چمران",
+    "parent_id": "902",
+    "city_slug": "chamran-town"
+  },
+  {
+    "city_id": "1784",
+    "name": "حمیدیه",
+    "parent_id": "902",
+    "city_slug": "hamidiyeh"
+  },
+  {
+    "city_id": "799",
+    "name": "خرمشهر",
+    "parent_id": "902",
+    "city_slug": "khorramshahr"
+  },
+  {
+    "city_id": "23",
+    "name": "دزفول",
+    "parent_id": "902",
+    "city_slug": "dezful"
+  },
+  {
+    "city_id": "1781",
+    "name": "رامشیر",
+    "parent_id": "902",
+    "city_slug": "ramshir"
+  },
+  {
+    "city_id": "800",
+    "name": "رامهرمز",
+    "parent_id": "902",
+    "city_slug": "ramhormoz"
+  },
+  {
+    "city_id": "756",
+    "name": "سوسنگرد",
+    "parent_id": "902",
+    "city_slug": "susangerd"
+  },
+  {
+    "city_id": "1780",
+    "name": "شادگان",
+    "parent_id": "902",
+    "city_slug": "shadeghan"
+  },
+  {
+    "city_id": "754",
+    "name": "شوش",
+    "parent_id": "902",
+    "city_slug": "shush"
+  },
+  {
+    "city_id": "602",
+    "name": "شوشتر",
+    "parent_id": "902",
+    "city_slug": "shushtar"
+  },
+  {
+    "city_id": "317",
+    "name": "مسجد سلیمان",
+    "parent_id": "902",
+    "city_slug": "masjed-e-soleyman"
+  },
+  {
+    "city_id": "1783",
+    "name": "هندیجان",
+    "parent_id": "902",
+    "city_slug": "hendijan"
+  },
+  {
+    "city_id": "3393",
+    "name": "کارون",
+    "parent_id": "902",
+    "city_slug": "karun"
+  },
+  {
+    "city_id": "3394",
+    "name": "کرخه",
+    "parent_id": "902",
+    "city_slug": "karkheh"
+  },
+  {
+    "city_id": "3395",
+    "name": "گتوند",
+    "parent_id": "902",
+    "city_slug": "getvand"
+  },
+  {
+    "city_id": "3396",
+    "name": "لالی",
+    "parent_id": "902",
+    "city_slug": "lali"
+  },
+  {
+    "city_id": "3397",
+    "name": "اندیکا",
+    "parent_id": "902",
+    "city_slug": "andika"
+  },
+  {
+    "city_id": "3398",
+    "name": "دشت آزادگان",
+    "parent_id": "902",
+    "city_slug": "dasht-azadegan"
+  },
+  {
+    "city_id": "3399",
+    "name": "باوی",
+    "parent_id": "902",
+    "city_slug": "bavi"
+  },
+  {
+    "city_id": "3400",
+    "name": "هفتگل",
+    "parent_id": "902",
+    "city_slug": "haftgel"
+  },
+  {
+    "city_id": "3401",
+    "name": "باغ ملک",
+    "parent_id": "902",
+    "city_slug": "bagh-malek"
+  },
+  {
+    "city_id": "3402",
+    "name": "دزپارت",
+    "parent_id": "902",
+    "city_slug": "dezpart"
+  },
+  {
+    "city_id": "3403",
+    "name": "آغاجاری",
+    "parent_id": "902",
+    "city_slug": "aghajari"
+  },
+  {
+    "city_id": "802",
+    "name": "ابهر",
+    "parent_id": "879",
+    "city_slug": "abhar"
+  },
+  {
+    "city_id": "803",
+    "name": "خرمدره",
+    "parent_id": "879",
+    "city_slug": "khorramdarreh"
+  },
+  {
+    "city_id": "20",
+    "name": "زنجان",
+    "parent_id": "879",
+    "city_slug": "zanjan"
+  },
+  {
+    "city_id": "804",
+    "name": "قیدار",
+    "parent_id": "879",
+    "city_slug": "qeydar"
+  },
+  {
+    "city_id": "805",
+    "name": "دامغان",
+    "parent_id": "882",
+    "city_slug": "damghan"
+  },
+  {
+    "city_id": "35",
+    "name": "سمنان",
+    "parent_id": "882",
+    "city_slug": "semnan"
+  },
+  {
+    "city_id": "707",
+    "name": "شاهرود",
+    "parent_id": "882",
+    "city_slug": "shahrud"
+  },
+  {
+    "city_id": "806",
+    "name": "گرمسار",
+    "parent_id": "882",
+    "city_slug": "garmsar"
+  },
+  {
+    "city_id": "807",
+    "name": "ایرانشهر",
+    "parent_id": "883",
+    "city_slug": "Iranshahr"
+  },
+  {
+    "city_id": "747",
+    "name": "چابهار",
+    "parent_id": "883",
+    "city_slug": "chabahar"
+  },
+  {
+    "city_id": "1785",
+    "name": "خاش",
+    "parent_id": "883",
+    "city_slug": "khash"
+  },
+  {
+    "city_id": "706",
+    "name": "زابل",
+    "parent_id": "883",
+    "city_slug": "zabol"
+  },
+  {
+    "city_id": "11",
+    "name": "زاهدان",
+    "parent_id": "883",
+    "city_slug": "zahedan"
+  },
+  {
+    "city_id": "1787",
+    "name": "زهک",
+    "parent_id": "883",
+    "city_slug": "zahak"
+  },
+  {
+    "city_id": "865",
+    "name": "سراوان",
+    "parent_id": "883",
+    "city_slug": "saravan"
+  },
+  {
+    "city_id": "1786",
+    "name": "کنارک",
+    "parent_id": "883",
+    "city_slug": "konarak"
+  },
+  {
+    "city_id": "6",
+    "name": "شیراز",
+    "parent_id": "898",
+    "city_slug": "shiraz"
+  },
+  {
+    "city_id": "851",
+    "name": "آباده",
+    "parent_id": "898",
+    "city_slug": "abadeh"
+  },
+  {
+    "city_id": "1728",
+    "name": "اقلید",
+    "parent_id": "898",
+    "city_slug": "eqlid"
+  },
+  {
+    "city_id": "808",
+    "name": "جهرم",
+    "parent_id": "898",
+    "city_slug": "jahrom"
+  },
+  {
+    "city_id": "1793",
+    "name": "خور (فارس)",
+    "parent_id": "898",
+    "city_slug": "khoour"
+  },
+  {
+    "city_id": "809",
+    "name": "داراب",
+    "parent_id": "898",
+    "city_slug": "darab"
+  },
+  {
+    "city_id": "1791",
+    "name": "زرقان",
+    "parent_id": "898",
+    "city_slug": "zarghan"
+  },
+  {
+    "city_id": "810",
+    "name": "صدرا-فارس",
+    "parent_id": "898",
+    "city_slug": "sadra"
+  },
+  {
+    "city_id": "1789",
+    "name": "فسا",
+    "parent_id": "898",
+    "city_slug": "fasa-city"
+  },
+  {
+    "city_id": "1734",
+    "name": "فیروزآباد",
+    "parent_id": "898",
+    "city_slug": "firuzabad"
+  },
+  {
+    "city_id": "1790",
+    "name": "کازرون",
+    "parent_id": "898",
+    "city_slug": "kazeroon"
+  },
+  {
+    "city_id": "1730",
+    "name": "لار",
+    "parent_id": "898",
+    "city_slug": "lar"
+  },
+  {
+    "city_id": "1731",
+    "name": "لامرد",
+    "parent_id": "898",
+    "city_slug": "lamerd"
+  },
+  {
+    "city_id": "1788",
+    "name": "مرودشت",
+    "parent_id": "898",
+    "city_slug": "marvdasht-city"
+  },
+  {
+    "city_id": "1792",
+    "name": "مهر",
+    "parent_id": "898",
+    "city_slug": "mohr"
+  },
+  {
+    "city_id": "1794",
+    "name": "نورآباد ممسنی",
+    "parent_id": "898",
+    "city_slug": "norabad"
+  },
+  {
+    "city_id": "1726",
+    "name": "نی\u200cریز",
+    "parent_id": "898",
+    "city_slug": "neyriz"
+  },
+  {
+    "city_id": "2685",
+    "name": "ماهورمیلاتی",
+    "parent_id": "898",
+    "city_slug": "mahur-milati"
+  },
+  {
+    "city_id": "2686",
+    "name": "محمله",
+    "parent_id": "898",
+    "city_slug": "mahmaleh"
+  },
+  {
+    "city_id": "2687",
+    "name": "کردیان",
+    "parent_id": "898",
+    "city_slug": "kardiyan"
+  },
+  {
+    "city_id": "2688",
+    "name": "کنار تخته و کمار",
+    "parent_id": "898",
+    "city_slug": "kenar-takhte-va-kamar"
+  },
+  {
+    "city_id": "2689",
+    "name": "کر",
+    "parent_id": "898",
+    "city_slug": "kor"
+  },
+  {
+    "city_id": "2690",
+    "name": "کربال",
+    "parent_id": "898",
+    "city_slug": "karbal"
+  },
+  {
+    "city_id": "2691",
+    "name": "کوهمره",
+    "parent_id": "898",
+    "city_slug": "kuhmarreh"
+  },
+  {
+    "city_id": "2692",
+    "name": "کوهنجان",
+    "parent_id": "898",
+    "city_slug": "kuhenjan"
+  },
+  {
+    "city_id": "2693",
+    "name": "کوار",
+    "parent_id": "898",
+    "city_slug": "kavar"
+  },
+  {
+    "city_id": "2694",
+    "name": "کوه چنار",
+    "parent_id": "898",
+    "city_slug": "kuh-chenar"
+  },
+  {
+    "city_id": "2695",
+    "name": "فورگ",
+    "parent_id": "898",
+    "city_slug": "furg"
+  },
+  {
+    "city_id": "2696",
+    "name": "فسارود",
+    "parent_id": "898",
+    "city_slug": "fasarud"
+  },
+  {
+    "city_id": "2697",
+    "name": "کامفیروز",
+    "parent_id": "898",
+    "city_slug": "kamfiruz"
+  },
+  {
+    "city_id": "2698",
+    "name": "قطرویه",
+    "parent_id": "898",
+    "city_slug": "ghatruyeh"
+  },
+  {
+    "city_id": "2699",
+    "name": "قیروکارزی",
+    "parent_id": "898",
+    "city_slug": "ghirokarzi"
+  },
+  {
+    "city_id": "2700",
+    "name": "جوزار",
+    "parent_id": "898",
+    "city_slug": "jouzar"
+  },
+  {
+    "city_id": "2701",
+    "name": "جره و بالاده",
+    "parent_id": "898",
+    "city_slug": "jare-va-baladeh"
+  },
+  {
+    "city_id": "2702",
+    "name": "جنت",
+    "parent_id": "898",
+    "city_slug": "jannat-city"
+  },
+  {
+    "city_id": "2703",
+    "name": "حسن آباد",
+    "parent_id": "898",
+    "city_slug": "hasanabad-city"
+  },
+  {
+    "city_id": "2704",
+    "name": "حنا",
+    "parent_id": "898",
+    "city_slug": "hanna"
+  },
+  {
+    "city_id": "2705",
+    "name": "جویم",
+    "parent_id": "898",
+    "city_slug": "juyom"
+  },
+  {
+    "city_id": "2706",
+    "name": "چاه ورز",
+    "parent_id": "898",
+    "city_slug": "chah-varz"
+  },
+  {
+    "city_id": "2707",
+    "name": "بوانات",
+    "parent_id": "898",
+    "city_slug": "bavanat"
+  },
+  {
+    "city_id": "2708",
+    "name": "بیدشهر",
+    "parent_id": "898",
+    "city_slug": "bidshahr"
+  },
+  {
+    "city_id": "2709",
+    "name": "بنارویه",
+    "parent_id": "898",
+    "city_slug": "banaruyeh"
+  },
+  {
+    "city_id": "2710",
+    "name": "بهمن صغاد",
+    "parent_id": "898",
+    "city_slug": "bahman-soghad"
+  },
+  {
+    "city_id": "2711",
+    "name": "پاسارگاد",
+    "parent_id": "898",
+    "city_slug": "pasargad"
+  },
+  {
+    "city_id": "2712",
+    "name": "پشتکوه",
+    "parent_id": "898",
+    "city_slug": "poshtkuh"
+  },
+  {
+    "city_id": "2713",
+    "name": "بیرم",
+    "parent_id": "898",
+    "city_slug": "beyram"
+  },
+  {
+    "city_id": "2714",
+    "name": "بیضا",
+    "parent_id": "898",
+    "city_slug": "beyza"
+  },
+  {
+    "city_id": "2715",
+    "name": "اوز",
+    "parent_id": "898",
+    "city_slug": "owz"
+  },
+  {
+    "city_id": "2716",
+    "name": "اشکنان",
+    "parent_id": "898",
+    "city_slug": "ashkanan"
+  },
+  {
+    "city_id": "2717",
+    "name": "افزر",
+    "parent_id": "898",
+    "city_slug": "afzar"
+  },
+  {
+    "city_id": "2718",
+    "name": "بانش",
+    "parent_id": "898",
+    "city_slug": "banesh"
+  },
+  {
+    "city_id": "2719",
+    "name": "بختگان",
+    "parent_id": "898",
+    "city_slug": "bakhtagan"
+  },
+  {
+    "city_id": "2720",
+    "name": "ایزدخواست",
+    "parent_id": "898",
+    "city_slug": "izadkhvast"
+  },
+  {
+    "city_id": "2721",
+    "name": "باغ صفا",
+    "parent_id": "898",
+    "city_slug": "bagh-safa"
+  },
+  {
+    "city_id": "2722",
+    "name": "ارد",
+    "parent_id": "898",
+    "city_slug": "ard"
+  },
+  {
+    "city_id": "2723",
+    "name": "استهبان",
+    "parent_id": "898",
+    "city_slug": "estahban"
+  },
+  {
+    "city_id": "2724",
+    "name": "اسیر",
+    "parent_id": "898",
+    "city_slug": "asir"
+  },
+  {
+    "city_id": "2725",
+    "name": "ارژن",
+    "parent_id": "898",
+    "city_slug": "arzhan"
+  },
+  {
+    "city_id": "2726",
+    "name": "ارسنجان",
+    "parent_id": "898",
+    "city_slug": "arsanjan"
+  },
+  {
+    "city_id": "2727",
+    "name": "شیبکوه",
+    "parent_id": "898",
+    "city_slug": "shibkuh"
+  },
+  {
+    "city_id": "2728",
+    "name": "سیمکان",
+    "parent_id": "898",
+    "city_slug": "simakan"
+  },
+  {
+    "city_id": "2729",
+    "name": "ششده و قره بلاغ",
+    "parent_id": "898",
+    "city_slug": "sheshdeh-va-qareh-bolagh"
+  },
+  {
+    "city_id": "2730",
+    "name": "علامرودشت",
+    "parent_id": "898",
+    "city_slug": "alamarudash"
+  },
+  {
+    "city_id": "2731",
+    "name": "فراشبند",
+    "parent_id": "898",
+    "city_slug": "farashband"
+  },
+  {
+    "city_id": "2732",
+    "name": "صحرای باغ",
+    "parent_id": "898",
+    "city_slug": "sahraye-bagh"
+  },
+  {
+    "city_id": "2733",
+    "name": "طسوج",
+    "parent_id": "898",
+    "city_slug": "tasuj"
+  },
+  {
+    "city_id": "2734",
+    "name": "سده",
+    "parent_id": "898",
+    "city_slug": "sedeh"
+  },
+  {
+    "city_id": "2735",
+    "name": "سرچهان",
+    "parent_id": "898",
+    "city_slug": "sarchahan"
+  },
+  {
+    "city_id": "2736",
+    "name": "زرین دشت",
+    "parent_id": "898",
+    "city_slug": "zarrin-dasht"
+  },
+  {
+    "city_id": "2737",
+    "name": "سپیدان",
+    "parent_id": "898",
+    "city_slug": "sepiddan"
+  },
+  {
+    "city_id": "2738",
+    "name": "سیاخ دارنگون",
+    "parent_id": "898",
+    "city_slug": "siyakh-darangoon"
+  },
+  {
+    "city_id": "2739",
+    "name": "سیدان",
+    "parent_id": "898",
+    "city_slug": "seydan"
+  },
+  {
+    "city_id": "2740",
+    "name": "سروستان",
+    "parent_id": "898",
+    "city_slug": "sarvestan-city"
+  },
+  {
+    "city_id": "2741",
+    "name": "سورنا",
+    "parent_id": "898",
+    "city_slug": "sorena"
+  },
+  {
+    "city_id": "2742",
+    "name": "راهگان",
+    "parent_id": "898",
+    "city_slug": "rahgan"
+  },
+  {
+    "city_id": "2743",
+    "name": "رحمت\u200cآباد",
+    "parent_id": "898",
+    "city_slug": "rahmatabad-city"
+  },
+  {
+    "city_id": "2744",
+    "name": "دشمن زیاری",
+    "parent_id": "898",
+    "city_slug": "doshman-ziyari"
+  },
+  {
+    "city_id": "2745",
+    "name": "دهرم",
+    "parent_id": "898",
+    "city_slug": "dahram"
+  },
+  {
+    "city_id": "2746",
+    "name": "رونیز",
+    "parent_id": "898",
+    "city_slug": "roniz"
+  },
+  {
+    "city_id": "2747",
+    "name": "رستاق",
+    "parent_id": "898",
+    "city_slug": "rostaq"
+  },
+  {
+    "city_id": "2748",
+    "name": "رستم",
+    "parent_id": "898",
+    "city_slug": "rostam"
+  },
+  {
+    "city_id": "2749",
+    "name": "خشت",
+    "parent_id": "898",
+    "city_slug": "khesht"
+  },
+  {
+    "city_id": "2750",
+    "name": "خفر",
+    "parent_id": "898",
+    "city_slug": "khafr"
+  },
+  {
+    "city_id": "2751",
+    "name": "خرامه",
+    "parent_id": "898",
+    "city_slug": "kherameh"
+  },
+  {
+    "city_id": "2752",
+    "name": "خرم بید",
+    "parent_id": "898",
+    "city_slug": "khorram-bid"
+  },
+  {
+    "city_id": "2753",
+    "name": "درودزن",
+    "parent_id": "898",
+    "city_slug": "doroodzan"
+  },
+  {
+    "city_id": "2754",
+    "name": "خنج",
+    "parent_id": "898",
+    "city_slug": "khanj"
+  },
+  {
+    "city_id": "2755",
+    "name": "خیرگو",
+    "parent_id": "898",
+    "city_slug": "kheyrgoo"
+  },
+  {
+    "city_id": "2756",
+    "name": "میمند",
+    "parent_id": "898",
+    "city_slug": "mimand"
+  },
+  {
+    "city_id": "2757",
+    "name": "مشهد مرغاب",
+    "parent_id": "898",
+    "city_slug": "mashhad-marghab"
+  },
+  {
+    "city_id": "2758",
+    "name": "همایجان",
+    "parent_id": "898",
+    "city_slug": "homayjan"
+  },
+  {
+    "city_id": "2759",
+    "name": "وراوی",
+    "parent_id": "898",
+    "city_slug": "varavi"
+  },
+  {
+    "city_id": "2760",
+    "name": "نوبندگان",
+    "parent_id": "898",
+    "city_slug": "noubandegan"
+  },
+  {
+    "city_id": "2761",
+    "name": "گراش",
+    "parent_id": "898",
+    "city_slug": "gerash"
+  },
+  {
+    "city_id": "2762",
+    "name": "گله دار",
+    "parent_id": "898",
+    "city_slug": "geleh-dar"
+  },
+  {
+    "city_id": "2763",
+    "name": "مزایجان",
+    "parent_id": "898",
+    "city_slug": "mazayjan"
+  },
+  {
+    "city_id": "869",
+    "name": "آبیک",
+    "parent_id": "878",
+    "city_slug": "abyek"
+  },
+  {
+    "city_id": "1795",
+    "name": "اقبالیه",
+    "parent_id": "878",
+    "city_slug": "eqbaliyeh"
+  },
+  {
+    "city_id": "872",
+    "name": "الوند",
+    "parent_id": "878",
+    "city_slug": "alvand"
+  },
+  {
+    "city_id": "811",
+    "name": "تاکستان",
+    "parent_id": "878",
+    "city_slug": "takestan"
+  },
+  {
+    "city_id": "1796",
+    "name": "شال",
+    "parent_id": "878",
+    "city_slug": "shal"
+  },
+  {
+    "city_id": "19",
+    "name": "قزوین",
+    "parent_id": "878",
+    "city_slug": "qazvin"
+  },
+  {
+    "city_id": "873",
+    "name": "محمدیه-قزوین",
+    "parent_id": "878",
+    "city_slug": "mohammadieh"
+  },
+  {
+    "city_id": "8",
+    "name": "قم",
+    "parent_id": "892",
+    "city_slug": "qom"
+  },
+  {
+    "city_id": "2569",
+    "name": "قمرود",
+    "parent_id": "892",
+    "city_slug": "qamarud"
+  },
+  {
+    "city_id": "2570",
+    "name": "جعفرآباد",
+    "parent_id": "892",
+    "city_slug": "jafarabad"
+  },
+  {
+    "city_id": "2571",
+    "name": "خلجستان",
+    "parent_id": "892",
+    "city_slug": "khalajestan"
+  },
+  {
+    "city_id": "2572",
+    "name": "سلفچگان",
+    "parent_id": "892",
+    "city_slug": "salfchegan"
+  },
+  {
+    "city_id": "2573",
+    "name": "فردو",
+    "parent_id": "892",
+    "city_slug": "fordo"
+  },
+  {
+    "city_id": "2574",
+    "name": "قاهان",
+    "parent_id": "892",
+    "city_slug": "ghahan"
+  },
+  {
+    "city_id": "2575",
+    "name": "کهک",
+    "parent_id": "892",
+    "city_slug": "kahak"
+  },
+  {
+    "city_id": "2576",
+    "name": "قنوات",
+    "parent_id": "892",
+    "city_slug": "qanavat"
+  },
+  {
+    "city_id": "662",
+    "name": "بانه",
+    "parent_id": "885",
+    "city_slug": "baneh"
+  },
+  {
+    "city_id": "868",
+    "name": "بیجار",
+    "parent_id": "885",
+    "city_slug": "bijar"
+  },
+  {
+    "city_id": "1798",
+    "name": "دهگلان",
+    "parent_id": "885",
+    "city_slug": "dehgolan"
+  },
+  {
+    "city_id": "812",
+    "name": "سقز",
+    "parent_id": "885",
+    "city_slug": "saqqez"
+  },
+  {
+    "city_id": "28",
+    "name": "سنندج",
+    "parent_id": "885",
+    "city_slug": "sanandaj"
+  },
+  {
+    "city_id": "813",
+    "name": "قروه",
+    "parent_id": "885",
+    "city_slug": "qorveh"
+  },
+  {
+    "city_id": "1797",
+    "name": "کامیاران",
+    "parent_id": "885",
+    "city_slug": "kamyaran"
+  },
+  {
+    "city_id": "814",
+    "name": "مریوان",
+    "parent_id": "885",
+    "city_slug": "marivan"
+  },
+  {
+    "city_id": "1804",
+    "name": "بافت",
+    "parent_id": "877",
+    "city_slug": "baft"
+  },
+  {
+    "city_id": "1805",
+    "name": "بردسیر",
+    "parent_id": "877",
+    "city_slug": "bardsir"
+  },
+  {
+    "city_id": "1807",
+    "name": "بلوک",
+    "parent_id": "877",
+    "city_slug": "boluk"
+  },
+  {
+    "city_id": "815",
+    "name": "بم",
+    "parent_id": "877",
+    "city_slug": "bam"
+  },
+  {
+    "city_id": "816",
+    "name": "جیرفت",
+    "parent_id": "877",
+    "city_slug": "jiroft"
+  },
+  {
+    "city_id": "817",
+    "name": "رفسنجان",
+    "parent_id": "877",
+    "city_slug": "rafsanjan"
+  },
+  {
+    "city_id": "867",
+    "name": "زرند",
+    "parent_id": "877",
+    "city_slug": "zarand"
+  },
+  {
+    "city_id": "818",
+    "name": "سیرجان",
+    "parent_id": "877",
+    "city_slug": "sirjan"
+  },
+  {
+    "city_id": "13",
+    "name": "کرمان",
+    "parent_id": "877",
+    "city_slug": "kerman"
+  },
+  {
+    "city_id": "1803",
+    "name": "کهنوج",
+    "parent_id": "877",
+    "city_slug": "kahnooj"
+  },
+  {
+    "city_id": "1806",
+    "name": "ماهان",
+    "parent_id": "877",
+    "city_slug": "mahan"
+  },
+  {
+    "city_id": "9",
+    "name": "کرمانشاه",
+    "parent_id": "905",
+    "city_slug": "kermanshah"
+  },
+  {
+    "city_id": "819",
+    "name": "اسلام\u200c\u200cآباد غرب",
+    "parent_id": "905",
+    "city_slug": "eslamabad-gharb"
+  },
+  {
+    "city_id": "1801",
+    "name": "بیستون",
+    "parent_id": "905",
+    "city_slug": "bisotun"
+  },
+  {
+    "city_id": "820",
+    "name": "جوانرود",
+    "parent_id": "905",
+    "city_slug": "javanrud"
+  },
+  {
+    "city_id": "854",
+    "name": "سرپل ذهاب",
+    "parent_id": "905",
+    "city_slug": "sarpol-zahab"
+  },
+  {
+    "city_id": "855",
+    "name": "سنقر",
+    "parent_id": "905",
+    "city_slug": "sonqor"
+  },
+  {
+    "city_id": "1800",
+    "name": "صحنه",
+    "parent_id": "905",
+    "city_slug": "sahneh"
+  },
+  {
+    "city_id": "821",
+    "name": "کنگاور",
+    "parent_id": "905",
+    "city_slug": "kangavar"
+  },
+  {
+    "city_id": "1802",
+    "name": "گهواره",
+    "parent_id": "905",
+    "city_slug": "gahvareh"
+  },
+  {
+    "city_id": "1799",
+    "name": "هرسین",
+    "parent_id": "905",
+    "city_slug": "harsin"
+  },
+  {
+    "city_id": "874",
+    "name": "دوگنبدان",
+    "parent_id": "887",
+    "city_slug": "dogonbadan"
+  },
+  {
+    "city_id": "822",
+    "name": "دهدشت",
+    "parent_id": "887",
+    "city_slug": "dehdasht"
+  },
+  {
+    "city_id": "1808",
+    "name": "سی\u200cسخت",
+    "parent_id": "887",
+    "city_slug": "sisakht"
+  },
+  {
+    "city_id": "38",
+    "name": "یاسوج",
+    "parent_id": "887",
+    "city_slug": "yasuj"
+  },
+  {
+    "city_id": "1691",
+    "name": "آزادشهر",
+    "parent_id": "897",
+    "city_slug": "azadshahr-golestan"
+  },
+  {
+    "city_id": "748",
+    "name": "آق قلا",
+    "parent_id": "897",
+    "city_slug": "aq-qala"
+  },
+  {
+    "city_id": "751",
+    "name": "بندر ترکمن",
+    "parent_id": "897",
+    "city_slug": "bandar-torkaman"
+  },
+  {
+    "city_id": "823",
+    "name": "علی\u200cآباد کتول",
+    "parent_id": "897",
+    "city_slug": "aliabad-katul"
+  },
+  {
+    "city_id": "750",
+    "name": "کردکوی",
+    "parent_id": "897",
+    "city_slug": "Kordkuy"
+  },
+  {
+    "city_id": "1692",
+    "name": "کلاله",
+    "parent_id": "897",
+    "city_slug": "kalale"
+  },
+  {
+    "city_id": "1832",
+    "name": "گالیکش",
+    "parent_id": "897",
+    "city_slug": "galikesh"
+  },
+  {
+    "city_id": "21",
+    "name": "گرگان",
+    "parent_id": "897",
+    "city_slug": "gorgan"
+  },
+  {
+    "city_id": "749",
+    "name": "گمیشان",
+    "parent_id": "897",
+    "city_slug": "gomishan"
+  },
+  {
+    "city_id": "743",
+    "name": "گنبد کاووس",
+    "parent_id": "897",
+    "city_slug": "gonbad-kavus"
+  },
+  {
+    "city_id": "1693",
+    "name": "مینودشت",
+    "parent_id": "897",
+    "city_slug": "minoodasht"
+  },
+  {
+    "city_id": "1966",
+    "name": "سنگدوین",
+    "parent_id": "897",
+    "city_slug": "sangdovin"
+  },
+  {
+    "city_id": "1968",
+    "name": "سرخنکلاته",
+    "parent_id": "897",
+    "city_slug": "sorkhan-kalateh"
+  },
+  {
+    "city_id": "1970",
+    "name": "فراغی",
+    "parent_id": "897",
+    "city_slug": "faragi"
+  },
+  {
+    "city_id": "1972",
+    "name": "صادق آباد",
+    "parent_id": "897",
+    "city_slug": "sadegh-abad"
+  },
+  {
+    "city_id": "1973",
+    "name": "بندر گز",
+    "parent_id": "897",
+    "city_slug": "bandar-gaz"
+  },
+  {
+    "city_id": "1974",
+    "name": "مراوه",
+    "parent_id": "897",
+    "city_slug": "maraveh-tapeh"
+  },
+  {
+    "city_id": "1975",
+    "name": "دلند",
+    "parent_id": "897",
+    "city_slug": "daland"
+  },
+  {
+    "city_id": "1976",
+    "name": "نگین شهر",
+    "parent_id": "897",
+    "city_slug": "negin-shahr"
+  },
+  {
+    "city_id": "1979",
+    "name": "رامیان",
+    "parent_id": "897",
+    "city_slug": "ramiyan"
+  },
+  {
+    "city_id": "1980",
+    "name": "خان بین",
+    "parent_id": "897",
+    "city_slug": "khan-bin"
+  },
+  {
+    "city_id": "1981",
+    "name": "جلین",
+    "parent_id": "897",
+    "city_slug": "jelin"
+  },
+  {
+    "city_id": "1984",
+    "name": "دوزین",
+    "parent_id": "897",
+    "city_slug": "dozin"
+  },
+  {
+    "city_id": "1985",
+    "name": "نوکنده",
+    "parent_id": "897",
+    "city_slug": "nokandeh"
+  },
+  {
+    "city_id": "1986",
+    "name": "گلی داغ",
+    "parent_id": "897",
+    "city_slug": "goli-dagh"
+  },
+  {
+    "city_id": "1990",
+    "name": "نوده خاندوز",
+    "parent_id": "897",
+    "city_slug": "nodeh-khandoz"
+  },
+  {
+    "city_id": "1991",
+    "name": "انبارآلوم",
+    "parent_id": "897",
+    "city_slug": "anbaralum"
+  },
+  {
+    "city_id": "1996",
+    "name": "فاضل آباد",
+    "parent_id": "897",
+    "city_slug": "fazel-abad"
+  },
+  {
+    "city_id": "1999",
+    "name": "مزرعه کتول",
+    "parent_id": "897",
+    "city_slug": "mazrae-katool"
+  },
+  {
+    "city_id": "2002",
+    "name": "ینقاق",
+    "parent_id": "897",
+    "city_slug": "yanghagh"
+  },
+  {
+    "city_id": "2003",
+    "name": "سیجوال",
+    "parent_id": "897",
+    "city_slug": "sijval"
+  },
+  {
+    "city_id": "2006",
+    "name": "سیمین شهر",
+    "parent_id": "897",
+    "city_slug": "simin-shahr"
+  },
+  {
+    "city_id": "2008",
+    "name": "تاتار علیا",
+    "parent_id": "897",
+    "city_slug": "tatar-olya"
+  },
+  {
+    "city_id": "2010",
+    "name": "القجر",
+    "parent_id": "897",
+    "city_slug": "alghajar"
+  },
+  {
+    "city_id": "2012",
+    "name": "قرق",
+    "parent_id": "897",
+    "city_slug": "ghorogh"
+  },
+  {
+    "city_id": "2013",
+    "name": "اینچه برون",
+    "parent_id": "897",
+    "city_slug": "inche-borun"
+  },
+  {
+    "city_id": "12",
+    "name": "رشت",
+    "parent_id": "889",
+    "city_slug": "rasht"
+  },
+  {
+    "city_id": "824",
+    "name": "آستارا",
+    "parent_id": "889",
+    "city_slug": "astara"
+  },
+  {
+    "city_id": "825",
+    "name": "آستانه اشرفیه",
+    "parent_id": "889",
+    "city_slug": "astaneh-ashrafiyeh"
+  },
+  {
+    "city_id": "1852",
+    "name": "احمدسرگوراب",
+    "parent_id": "889",
+    "city_slug": "ahmadsar-gourab"
+  },
+  {
+    "city_id": "1812",
+    "name": "اسالم",
+    "parent_id": "889",
+    "city_slug": "asalem"
+  },
+  {
+    "city_id": "1688",
+    "name": "املش",
+    "parent_id": "889",
+    "city_slug": "amlash"
+  },
+  {
+    "city_id": "1854",
+    "name": "بره\u200cسر",
+    "parent_id": "889",
+    "city_slug": "barah-sar"
+  },
+  {
+    "city_id": "708",
+    "name": "بندر انزلی",
+    "parent_id": "889",
+    "city_slug": "bandar-anzali"
+  },
+  {
+    "city_id": "1841",
+    "name": "پره\u200cسر",
+    "parent_id": "889",
+    "city_slug": "pareh-sar"
+  },
+  {
+    "city_id": "829",
+    "name": "تالش",
+    "parent_id": "889",
+    "city_slug": "talesh"
+  },
+  {
+    "city_id": "1855",
+    "name": "توتکابن",
+    "parent_id": "889",
+    "city_slug": "toutkabon"
+  },
+  {
+    "city_id": "1850",
+    "name": "جیرنده",
+    "parent_id": "889",
+    "city_slug": "jirandeh"
+  },
+  {
+    "city_id": "864",
+    "name": "چابکسر",
+    "parent_id": "889",
+    "city_slug": "chaboksar"
+  },
+  {
+    "city_id": "1686",
+    "name": "چاف و چمخاله",
+    "parent_id": "889",
+    "city_slug": "chaf-chamkhale"
+  },
+  {
+    "city_id": "1844",
+    "name": "چوبر",
+    "parent_id": "889",
+    "city_slug": "chobar"
+  },
+  {
+    "city_id": "1847",
+    "name": "حویق",
+    "parent_id": "889",
+    "city_slug": "haviq"
+  },
+  {
+    "city_id": "1689",
+    "name": "خشکبیجار",
+    "parent_id": "889",
+    "city_slug": "khoshkbijar"
+  },
+  {
+    "city_id": "1809",
+    "name": "خمام",
+    "parent_id": "889",
+    "city_slug": "khomam"
+  },
+  {
+    "city_id": "1814",
+    "name": "دیلمان",
+    "parent_id": "889",
+    "city_slug": "deylaman"
+  },
+  {
+    "city_id": "1851",
+    "name": "رانکوه",
+    "parent_id": "889",
+    "city_slug": "rankouh"
+  },
+  {
+    "city_id": "1839",
+    "name": "رحیم\u200cآباد",
+    "parent_id": "889",
+    "city_slug": "raheem-abad"
+  },
+  {
+    "city_id": "1835",
+    "name": "رستم\u200cآباد",
+    "parent_id": "889",
+    "city_slug": "rostam-abad"
+  },
+  {
+    "city_id": "1684",
+    "name": "رضوانشهر",
+    "parent_id": "889",
+    "city_slug": "rezvanshahr"
+  },
+  {
+    "city_id": "1810",
+    "name": "رودبار",
+    "parent_id": "889",
+    "city_slug": "rudbar"
+  },
+  {
+    "city_id": "1849",
+    "name": "رودبنه",
+    "parent_id": "889",
+    "city_slug": "roudbaneh"
+  },
+  {
+    "city_id": "826",
+    "name": "رودسر",
+    "parent_id": "889",
+    "city_slug": "rudsar"
+  },
+  {
+    "city_id": "1683",
+    "name": "زیباکنار",
+    "parent_id": "889",
+    "city_slug": "zibakenar"
+  },
+  {
+    "city_id": "1811",
+    "name": "سنگر",
+    "parent_id": "889",
+    "city_slug": "sangar"
+  },
+  {
+    "city_id": "861",
+    "name": "سیاهکل",
+    "parent_id": "889",
+    "city_slug": "siahkal"
+  },
+  {
+    "city_id": "1813",
+    "name": "شفت",
+    "parent_id": "889",
+    "city_slug": "shaft"
+  },
+  {
+    "city_id": "1845",
+    "name": "شلمان",
+    "parent_id": "889",
+    "city_slug": "shelman"
+  },
+  {
+    "city_id": "827",
+    "name": "صومعه\u200cسرا",
+    "parent_id": "889",
+    "city_slug": "someh-sara"
+  },
+  {
+    "city_id": "860",
+    "name": "فومن",
+    "parent_id": "889",
+    "city_slug": "fuman"
+  },
+  {
+    "city_id": "863",
+    "name": "کلاچای",
+    "parent_id": "889",
+    "city_slug": "kelachay"
+  },
+  {
+    "city_id": "1840",
+    "name": "کوچصفهان",
+    "parent_id": "889",
+    "city_slug": "kouchesfahan"
+  },
+  {
+    "city_id": "1843",
+    "name": "کومله",
+    "parent_id": "889",
+    "city_slug": "koumeleh"
+  },
+  {
+    "city_id": "1687",
+    "name": "کیاشهر",
+    "parent_id": "889",
+    "city_slug": "kiashahr"
+  },
+  {
+    "city_id": "1846",
+    "name": "گوراب زرمیخ",
+    "parent_id": "889",
+    "city_slug": "gourab-zarmikh"
+  },
+  {
+    "city_id": "746",
+    "name": "لاهیجان",
+    "parent_id": "889",
+    "city_slug": "lahijan"
+  },
+  {
+    "city_id": "1690",
+    "name": "لشت نشا",
+    "parent_id": "889",
+    "city_slug": "lashtenesha"
+  },
+  {
+    "city_id": "828",
+    "name": "لنگرود",
+    "parent_id": "889",
+    "city_slug": "langarud"
+  },
+  {
+    "city_id": "1836",
+    "name": "لوشان",
+    "parent_id": "889",
+    "city_slug": "loshan"
+  },
+  {
+    "city_id": "1842",
+    "name": "لولمان",
+    "parent_id": "889",
+    "city_slug": "loulman"
+  },
+  {
+    "city_id": "1837",
+    "name": "لوندویل",
+    "parent_id": "889",
+    "city_slug": "lavandevil"
+  },
+  {
+    "city_id": "1848",
+    "name": "لیسار",
+    "parent_id": "889",
+    "city_slug": "lisar"
+  },
+  {
+    "city_id": "862",
+    "name": "ماسال",
+    "parent_id": "889",
+    "city_slug": "masal"
+  },
+  {
+    "city_id": "1815",
+    "name": "ماسوله",
+    "parent_id": "889",
+    "city_slug": "masuleh"
+  },
+  {
+    "city_id": "1853",
+    "name": "ماکلوان",
+    "parent_id": "889",
+    "city_slug": "makloan"
+  },
+  {
+    "city_id": "1834",
+    "name": "منجیل",
+    "parent_id": "889",
+    "city_slug": "manjil"
+  },
+  {
+    "city_id": "1969",
+    "name": "واجارگاه",
+    "parent_id": "889",
+    "city_slug": "vajargah"
+  },
+  {
+    "city_id": "1983",
+    "name": "طاهرگوراب",
+    "parent_id": "889",
+    "city_slug": "tahergurab"
+  },
+  {
+    "city_id": "1994",
+    "name": "شاندرمن",
+    "parent_id": "889",
+    "city_slug": "shanderman"
+  },
+  {
+    "city_id": "2000",
+    "name": "ضیابر",
+    "parent_id": "889",
+    "city_slug": "ziyabar"
+  },
+  {
+    "city_id": "2004",
+    "name": "اطاقور",
+    "parent_id": "889",
+    "city_slug": "otaghvar"
+  },
+  {
+    "city_id": "2007",
+    "name": "تولم شهر",
+    "parent_id": "889",
+    "city_slug": "tulam-shahr"
+  },
+  {
+    "city_id": "2011",
+    "name": "پیربازار",
+    "parent_id": "889",
+    "city_slug": "pirbazar"
+  },
+  {
+    "city_id": "870",
+    "name": "ازنا",
+    "parent_id": "884",
+    "city_slug": "azna"
+  },
+  {
+    "city_id": "1816",
+    "name": "الشتر",
+    "parent_id": "884",
+    "city_slug": "aleshtar"
+  },
+  {
+    "city_id": "830",
+    "name": "الیگودرز",
+    "parent_id": "884",
+    "city_slug": "aligudarz"
+  },
+  {
+    "city_id": "26",
+    "name": "بروجرد",
+    "parent_id": "884",
+    "city_slug": "borujerd"
+  },
+  {
+    "city_id": "1817",
+    "name": "پلدختر",
+    "parent_id": "884",
+    "city_slug": "pol-dokhtar"
+  },
+  {
+    "city_id": "27",
+    "name": "خرم\u200cآباد",
+    "parent_id": "884",
+    "city_slug": "khorramabad"
+  },
+  {
+    "city_id": "752",
+    "name": "دورود",
+    "parent_id": "884",
+    "city_slug": "dorud"
+  },
+  {
+    "city_id": "831",
+    "name": "کوهدشت",
+    "parent_id": "884",
+    "city_slug": "kuhdasht"
+  },
+  {
+    "city_id": "753",
+    "name": "نورآباد",
+    "parent_id": "884",
+    "city_slug": "nurabad"
+  },
+  {
+    "city_id": "1871",
+    "name": "آلاشت",
+    "parent_id": "893",
+    "city_slug": "aalasht"
+  },
+  {
+    "city_id": "663",
+    "name": "آمل",
+    "parent_id": "893",
+    "city_slug": "amol"
+  },
+  {
+    "city_id": "1703",
+    "name": "امیرکلا",
+    "parent_id": "893",
+    "city_slug": "amirkala"
+  },
+  {
+    "city_id": "1701",
+    "name": "ایزدشهر",
+    "parent_id": "893",
+    "city_slug": "izadshahr"
+  },
+  {
+    "city_id": "664",
+    "name": "بابل",
+    "parent_id": "893",
+    "city_slug": "babol"
+  },
+  {
+    "city_id": "710",
+    "name": "بابلسر",
+    "parent_id": "893",
+    "city_slug": "babolsar"
+  },
+  {
+    "city_id": "1873",
+    "name": "بلده",
+    "parent_id": "893",
+    "city_slug": "baladeh"
+  },
+  {
+    "city_id": "832",
+    "name": "بهشهر",
+    "parent_id": "893",
+    "city_slug": "behshahr"
+  },
+  {
+    "city_id": "1865",
+    "name": "بهنمیر",
+    "parent_id": "893",
+    "city_slug": "bahnamir"
+  },
+  {
+    "city_id": "1702",
+    "name": "پل سفید",
+    "parent_id": "893",
+    "city_slug": "polsefid"
+  },
+  {
+    "city_id": "833",
+    "name": "تنکابن",
+    "parent_id": "893",
+    "city_slug": "tonekabon"
+  },
+  {
+    "city_id": "834",
+    "name": "جویبار",
+    "parent_id": "893",
+    "city_slug": "juybar"
+  },
+  {
+    "city_id": "835",
+    "name": "چالوس",
+    "parent_id": "893",
+    "city_slug": "chalus"
+  },
+  {
+    "city_id": "1694",
+    "name": "چمستان",
+    "parent_id": "893",
+    "city_slug": "chamestan"
+  },
+  {
+    "city_id": "1861",
+    "name": "خلیل شهر",
+    "parent_id": "893",
+    "city_slug": "khalil-shahr"
+  },
+  {
+    "city_id": "1868",
+    "name": "خوش\u200cرودپی",
+    "parent_id": "893",
+    "city_slug": "khoshroud-pey"
+  },
+  {
+    "city_id": "745",
+    "name": "رامسر",
+    "parent_id": "893",
+    "city_slug": "ramsar"
+  },
+  {
+    "city_id": "1860",
+    "name": "رستمکلا",
+    "parent_id": "893",
+    "city_slug": "rostamkola"
+  },
+  {
+    "city_id": "1698",
+    "name": "رویان",
+    "parent_id": "893",
+    "city_slug": "royan"
+  },
+  {
+    "city_id": "1872",
+    "name": "رینه",
+    "parent_id": "893",
+    "city_slug": "reyneh"
+  },
+  {
+    "city_id": "1859",
+    "name": "زیرآب",
+    "parent_id": "893",
+    "city_slug": "ziraab"
+  },
+  {
+    "city_id": "22",
+    "name": "ساری",
+    "parent_id": "893",
+    "city_slug": "sari"
+  },
+  {
+    "city_id": "1700",
+    "name": "سرخرود",
+    "parent_id": "893",
+    "city_slug": "sorkhrood"
+  },
+  {
+    "city_id": "1699",
+    "name": "سلمان\u200cشهر",
+    "parent_id": "893",
+    "city_slug": "salman-shahr"
+  },
+  {
+    "city_id": "1862",
+    "name": "سورک",
+    "parent_id": "893",
+    "city_slug": "sourek"
+  },
+  {
+    "city_id": "1863",
+    "name": "شیرگاه",
+    "parent_id": "893",
+    "city_slug": "shirgah"
+  },
+  {
+    "city_id": "1697",
+    "name": "عباس\u200cآباد",
+    "parent_id": "893",
+    "city_slug": "abbasabad-mazandaran"
+  },
+  {
+    "city_id": "1819",
+    "name": "فرح آباد",
+    "parent_id": "893",
+    "city_slug": "farahabad"
+  },
+  {
+    "city_id": "836",
+    "name": "فریدون\u200cکنار",
+    "parent_id": "893",
+    "city_slug": "fereydunkenar"
+  },
+  {
+    "city_id": "1875",
+    "name": "فریم",
+    "parent_id": "893",
+    "city_slug": "farim"
+  },
+  {
+    "city_id": "665",
+    "name": "قائم\u200cشهر",
+    "parent_id": "893",
+    "city_slug": "qaem-shahr"
+  },
+  {
+    "city_id": "1858",
+    "name": "کتالم و سادات شهر",
+    "parent_id": "893",
+    "city_slug": "katalem-sadatshahr"
+  },
+  {
+    "city_id": "1695",
+    "name": "کلارآباد",
+    "parent_id": "893",
+    "city_slug": "kelarabad"
+  },
+  {
+    "city_id": "1696",
+    "name": "کلاردشت",
+    "parent_id": "893",
+    "city_slug": "kelarestan"
+  },
+  {
+    "city_id": "1870",
+    "name": "کوهی\u200cخیل",
+    "parent_id": "893",
+    "city_slug": "kouhi-kheyl"
+  },
+  {
+    "city_id": "1869",
+    "name": "کیاسر",
+    "parent_id": "893",
+    "city_slug": "kiasar"
+  },
+  {
+    "city_id": "1864",
+    "name": "کیاکلا",
+    "parent_id": "893",
+    "city_slug": "kiakola"
+  },
+  {
+    "city_id": "1866",
+    "name": "گتاب",
+    "parent_id": "893",
+    "city_slug": "gatab"
+  },
+  {
+    "city_id": "1876",
+    "name": "گزنک",
+    "parent_id": "893",
+    "city_slug": "gazanak"
+  },
+  {
+    "city_id": "1856",
+    "name": "گلوگاه",
+    "parent_id": "893",
+    "city_slug": "galougah-babol"
+  },
+  {
+    "city_id": "837",
+    "name": "محمودآباد",
+    "parent_id": "893",
+    "city_slug": "mahmudabad"
+  },
+  {
+    "city_id": "1867",
+    "name": "مرزن\u200cآباد",
+    "parent_id": "893",
+    "city_slug": "marzan-abad"
+  },
+  {
+    "city_id": "1874",
+    "name": "مرزیکلا",
+    "parent_id": "893",
+    "city_slug": "marzikola"
+  },
+  {
+    "city_id": "1818",
+    "name": "نشتارود",
+    "parent_id": "893",
+    "city_slug": "nashtarud"
+  },
+  {
+    "city_id": "838",
+    "name": "نکا",
+    "parent_id": "893",
+    "city_slug": "neka"
+  },
+  {
+    "city_id": "744",
+    "name": "نور",
+    "parent_id": "893",
+    "city_slug": "nur"
+  },
+  {
+    "city_id": "709",
+    "name": "نوشهر",
+    "parent_id": "893",
+    "city_slug": "nowshahr"
+  },
+  {
+    "city_id": "1965",
+    "name": "پایین هولار",
+    "parent_id": "893",
+    "city_slug": "paeen-holar"
+  },
+  {
+    "city_id": "1967",
+    "name": "دالخانی",
+    "parent_id": "893",
+    "city_slug": "dalkhani"
+  },
+  {
+    "city_id": "1971",
+    "name": "گلوگاه بابل (گلیا)",
+    "parent_id": "893",
+    "city_slug": "galugah-babol"
+  },
+  {
+    "city_id": "1977",
+    "name": "هادی شهر",
+    "parent_id": "893",
+    "city_slug": "hadi-shahr"
+  },
+  {
+    "city_id": "1978",
+    "name": "بابکان",
+    "parent_id": "893",
+    "city_slug": "babakan"
+  },
+  {
+    "city_id": "1982",
+    "name": "زرگرشهر",
+    "parent_id": "893",
+    "city_slug": "zargarshahr"
+  },
+  {
+    "city_id": "1987",
+    "name": "ارطه",
+    "parent_id": "893",
+    "city_slug": "arateh"
+  },
+  {
+    "city_id": "1988",
+    "name": "امامزاده عبدالله",
+    "parent_id": "893",
+    "city_slug": "emamzadeh-abdollah"
+  },
+  {
+    "city_id": "1989",
+    "name": "شیرود",
+    "parent_id": "893",
+    "city_slug": "shirud"
+  },
+  {
+    "city_id": "1992",
+    "name": "دابودشت",
+    "parent_id": "893",
+    "city_slug": "dabudasht"
+  },
+  {
+    "city_id": "1993",
+    "name": "آکند",
+    "parent_id": "893",
+    "city_slug": "akand"
+  },
+  {
+    "city_id": "1995",
+    "name": "آستانه سرا",
+    "parent_id": "893",
+    "city_slug": "astaneh-sara"
+  },
+  {
+    "city_id": "1997",
+    "name": "پول",
+    "parent_id": "893",
+    "city_slug": "pool"
+  },
+  {
+    "city_id": "1998",
+    "name": "طبقده",
+    "parent_id": "893",
+    "city_slug": "tabaghdeh"
+  },
+  {
+    "city_id": "2001",
+    "name": "کجور",
+    "parent_id": "893",
+    "city_slug": "kojur"
+  },
+  {
+    "city_id": "2005",
+    "name": "خرم\u200cآباد (تنکابن)",
+    "parent_id": "893",
+    "city_slug": "khoram-abad"
+  },
+  {
+    "city_id": "2009",
+    "name": "هچیرود",
+    "parent_id": "893",
+    "city_slug": "hachirud"
+  },
+  {
+    "city_id": "3388",
+    "name": "تالارپی",
+    "parent_id": "893",
+    "city_slug": "talarpey"
+  },
+  {
+    "city_id": "3389",
+    "name": "کلباد",
+    "parent_id": "893",
+    "city_slug": "kolbad"
+  },
+  {
+    "city_id": "3390",
+    "name": "کوهستان",
+    "parent_id": "893",
+    "city_slug": "kuhestan-city"
+  },
+  {
+    "city_id": "3391",
+    "name": "هزارجریب",
+    "parent_id": "893",
+    "city_slug": "hezarjarib-city"
+  },
+  {
+    "city_id": "3392",
+    "name": "یانه سر",
+    "parent_id": "893",
+    "city_slug": "yaneh-sar"
+  },
+  {
+    "city_id": "15",
+    "name": "اراک",
+    "parent_id": "901",
+    "city_slug": "arak"
+  },
+  {
+    "city_id": "839",
+    "name": "خمین",
+    "parent_id": "901",
+    "city_slug": "khomein"
+  },
+  {
+    "city_id": "1824",
+    "name": "دلیجان",
+    "parent_id": "901",
+    "city_slug": "delijan"
+  },
+  {
+    "city_id": "671",
+    "name": "ساوه",
+    "parent_id": "901",
+    "city_slug": "saveh"
+  },
+  {
+    "city_id": "1825",
+    "name": "شازند",
+    "parent_id": "901",
+    "city_slug": "shazand"
+  },
+  {
+    "city_id": "840",
+    "name": "محلات",
+    "parent_id": "901",
+    "city_slug": "mahalat"
+  },
+  {
+    "city_id": "1826",
+    "name": "مهاجران",
+    "parent_id": "901",
+    "city_slug": "mohajeran"
+  },
+  {
+    "city_id": "18",
+    "name": "بندرعباس",
+    "parent_id": "894",
+    "city_slug": "bandar-abbas"
+  },
+  {
+    "city_id": "1822",
+    "name": "تخت",
+    "parent_id": "894",
+    "city_slug": "takht"
+  },
+  {
+    "city_id": "1820",
+    "name": "درگهان",
+    "parent_id": "894",
+    "city_slug": "dargahan"
+  },
+  {
+    "city_id": "660",
+    "name": "قشم",
+    "parent_id": "894",
+    "city_slug": "qeshm"
+  },
+  {
+    "city_id": "33",
+    "name": "کیش",
+    "parent_id": "894",
+    "city_slug": "kish"
+  },
+  {
+    "city_id": "841",
+    "name": "میناب",
+    "parent_id": "894",
+    "city_slug": "minab"
+  },
+  {
+    "city_id": "1821",
+    "name": "هرمز",
+    "parent_id": "894",
+    "city_slug": "hormuz"
+  },
+  {
+    "city_id": "842",
+    "name": "اسدآباد",
+    "parent_id": "899",
+    "city_slug": "asadabad"
+  },
+  {
+    "city_id": "1828",
+    "name": "بهار",
+    "parent_id": "899",
+    "city_slug": "bahar-city"
+  },
+  {
+    "city_id": "866",
+    "name": "تویسرکان",
+    "parent_id": "899",
+    "city_slug": "tuyserkan"
+  },
+  {
+    "city_id": "1827",
+    "name": "کبودراهنگ",
+    "parent_id": "899",
+    "city_slug": "kabudrahang"
+  },
+  {
+    "city_id": "843",
+    "name": "ملایر",
+    "parent_id": "899",
+    "city_slug": "malayer"
+  },
+  {
+    "city_id": "844",
+    "name": "نهاوند",
+    "parent_id": "899",
+    "city_slug": "nahavand"
+  },
+  {
+    "city_id": "14",
+    "name": "همدان",
+    "parent_id": "899",
+    "city_slug": "hamedan"
+  },
+  {
+    "city_id": "846",
+    "name": "اردکان",
+    "parent_id": "886",
+    "city_slug": "ardakan"
+  },
+  {
+    "city_id": "1829",
+    "name": "بافق",
+    "parent_id": "886",
+    "city_slug": "bafq"
+  },
+  {
+    "city_id": "1831",
+    "name": "تفت",
+    "parent_id": "886",
+    "city_slug": "taft"
+  },
+  {
+    "city_id": "871",
+    "name": "حمیدیا",
+    "parent_id": "886",
+    "city_slug": "hamidia"
+  },
+  {
+    "city_id": "1830",
+    "name": "مهریز",
+    "parent_id": "886",
+    "city_slug": "mehriz"
+  },
+  {
+    "city_id": "845",
+    "name": "میبد",
+    "parent_id": "886",
+    "city_slug": "meybod"
+  },
+  {
+    "city_id": "16",
+    "name": "یزد",
+    "parent_id": "886",
+    "city_slug": "yazd"
+  }
+]

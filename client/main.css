@@ -1,2 +1,3 @@
 @import "tailwindcss";
-@import "maplibre-gl/dist/maplibre-gl.css"
+@plugin "daisyui";
+@import "maplibre-gl/dist/maplibre-gl.css";

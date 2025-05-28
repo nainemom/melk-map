@@ -1,34 +1,27 @@
-import { Button, Progress } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
-import { VscRunAbove, VscStopCircle } from "react-icons/vsc";
 import {
   getAllCityHouses,
   type GetAllHousesFilters,
   type House,
 } from "@/api";
-import { useAsync, useAsyncFn, useLocalStorage } from "react-use";
-import { MapStyleSelect } from "@/components/MapStyleSelect";
+import { useAsync, useAsyncFn } from "react-use";
 import { ofetch } from "ofetch";
 import { HousesMap } from "@/components/HousesMap";
-
+import { VscPlay, VscSaveAll, VscSettingsGear } from "react-icons/vsc";
+import { HousesFilters } from "@/components/HousesFilters";
 
 
 export function Root() {
-  const [filters] = useState<GetAllHousesFilters>(
+  const [filters, setFilters] = useState<GetAllHousesFilters>(
     {
       cityId: '1',
-      size: [30, 200],
+      exact: false,
+      size: [30, 120],
     }
   );
 
-  const [mapStyle, setMapStyle] = useLocalStorage<string>('map-style');
-
   const [progress, setProgress] = useState<number>(0);
   const [progressText, setProgressText] = useState('');
-
-  useEffect(() => {
-    console.log(progressText);
-  }, [progressText]);
 
   const lastSavedHouses = useAsync(() => ofetch<House[]>(new URL('./tehran.json', window.location.origin + window.location.pathname).href));
   const [houses, setHouses] = useState<House[]>([]);
@@ -41,41 +34,53 @@ export function Root() {
       setProgress(a / b);
       setProgressText(progressText);
       setHouses(currentHouses);
+    }).then(() => {
+      setProgress(0);
+      setProgressText('');
     });
   }, [filters]);
 
   return (
-    <div className="w-svw h-svh relative">
-      <HousesMap
-        houses={houses ?? []}
-        mapStyle={mapStyle!}
-      />
-      <div className="absolute top-0 left-0 w-full p-2 flex items-center justify-center gap-2 backdrop-contrast-50 backdrop-blur-sm">
-        <Progress size="2" max={1} value={progress} color="green" variant="classic" />
-        <Button
+    <div className="h-svh w-svw relative">
+      <div className="flex items-center justify-between backdrop-blur-sm bg-black z-10 absolute top-0 left-0 w-full p-2 gap-2">
+        <div className="flex items-center flex-col justify-between grow gap-1 h-full">
+          <label htmlFor="progress-bar" className="text-xs h-4">{progressText ? `${progressText}...` : ''}</label>
+          <progress id="progress-bar" value={progress} max="1" className="progress w-full h-2" />
+        </div>
+        <button
+          onClick={()=>document.querySelector<HTMLDialogElement>('#filters-dialog')!.showModal()}
+          disabled={crawlHouses.loading}
+          className="shrink-0 btn btn-sm btn-soft"
+        >
+          <VscSettingsGear className="size-4" /> Settings
+        </button>
+        <button
           onClick={() => {
             startCrawl();
           }}
-          color={crawlHouses.loading ? 'gray' : 'green'}
-          size="2"
-          variant="classic"
+          disabled={crawlHouses.loading}
+          className="shrink-0 btn btn-sm btn-primary"
         >
-          
-          {crawlHouses.loading ? (
-            <>
-              <VscStopCircle />
-              Stop
-            </>
-          ) : (
-            <>
-              <VscRunAbove />
-              Start Crawl Divar
-            </>
-          )}
-        </Button>
-        |
-        <MapStyleSelect value={mapStyle} onValueChange={setMapStyle} size="2" />
+          <VscPlay className="size-4" /> Run
+        </button>
       </div>
+
+      <dialog id="filters-dialog" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Filters</h3>
+          <div className="modal-action">
+            <form method="dialog" className="w-full">
+              <HousesFilters value={filters} onChange={setFilters} />
+              <div className="divider" />
+              <button className="btn btn-block btn-primary"><VscSaveAll /> OK</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <HousesMap
+        houses={houses ?? []}
+      />
     </div>
   );
 }

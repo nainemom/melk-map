@@ -6,13 +6,13 @@ import {
 } from "@/api";
 
 
+const mapStyle = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+
 export function HousesMap({
   houses,
-  mapStyle,
   children,
 }: {
   houses: House[],
-  mapStyle: string,
   children?: ReactNode,
 }) {
 
@@ -39,8 +39,8 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
       data,
       min: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[1].t)],
       max: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[gradientStops.length - 2].t)],
-      longitude: isNaN(center[0]) ? 0 : center[0],
-      latitude: isNaN(center[1]) ? 0 : center[1],
+      longitude: isNaN(center[0]) ? 51.3347 : center[0],
+      latitude: isNaN(center[1]) ? 35.7219 : center[1],
     };
   }, [houses, gradientStops]);
 

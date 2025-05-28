@@ -17,6 +17,27 @@ const httpClient = ofetch.create({
 
 export type ProgressFunction<T> = (value: number, max: number, title: string, lastValue: T) => void;
 
+export type City = {
+  name: string,
+  id: string,
+}
+
+export const getCities = async (): Promise<City[]> => {
+  // https://api.divar.ir/v8/search-bookmark/web/get-search-bar-empty-state
+  const response = await ofetch('./divar_cities.json' , {
+    baseURL: window.location.origin + window.location.pathname,
+    responseType: 'json',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return response.map((row: any) => ({
+    id: row.city_id,
+    name: row.city_slug.split('-').map((x: string) => `${x[0].toUpperCase()}${x.slice(1)}`).join(' '),
+  }) satisfies City);
+}
+
 export type House = {
   token: string,
   location: {
@@ -239,6 +260,7 @@ export const getDistrictHouses = async (filters: GetDistrictHousesFilters): Prom
 
 export type GetAllHousesFilters = Omit<GetDistrictHousesFilters, 'district'> & {
   cityId: string,
+  exact: boolean;
 };
 
 export const getAllCityHouses = async (filters: GetAllHousesFilters, progressFn?: ProgressFunction<House[]>): Promise<House[]> => {
@@ -248,15 +270,17 @@ export const getAllCityHouses = async (filters: GetAllHousesFilters, progressFn?
   }
   progress(0, 1, '');
 
+  const totalSteps = filters.exact ? 3 : 2;
+
   // Step 1: prepare
   const districts = await getDistricts(filters.cityId, (a, b, t) => {
-    progress((a / b), 3, t);
+    progress((a / b), totalSteps, t);
   });
 
   // Step 2: fetch
   let passedDistricts = 0;
   for (const district of districts) {
-    progress((passedDistricts / districts.length) + 1, 3, 'Fetching Districts Houses');
+    progress((passedDistricts / districts.length) + 1, totalSteps, 'Fetching Districts Houses');
     const districtHouses = await getDistrictHouses({
       ...filters,
       district,
@@ -266,23 +290,25 @@ export const getAllCityHouses = async (filters: GetAllHousesFilters, progressFn?
     passedDistricts+=1;
   }
 
-  // Step 3: verify
-  let passedHouses = 0;
-  const approximateHouses = [...returnValue];
-  for (const approximateHouse of approximateHouses) {
-    progress((passedHouses / approximateHouses.length) + 2, 3, 'Verifying Houses Data');
-    try {
-      const validatedHouse = await getHouse(approximateHouse.token);
-      returnValue = [
-        ...returnValue.filter(x => x !== approximateHouse),
-        validatedHouse,
-      ];
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    } catch (_e) {
-      continue;
+  if (filters.exact) {
+    // Step 3: verify
+    let passedHouses = 0;
+    const approximateHouses = [...returnValue];
+    for (const approximateHouse of approximateHouses) {
+      progress((passedHouses / approximateHouses.length) + 2, totalSteps, 'Verifying Houses Data');
+      try {
+        const validatedHouse = await getHouse(approximateHouse.token);
+        returnValue = [
+          ...returnValue.filter(x => x !== approximateHouse),
+          validatedHouse,
+        ];
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      } catch (_e) {
+        continue;
+      }
+      passedHouses += 1;
+      await new Promise((r) => setTimeout(r, 1100));
     }
-    passedHouses += 1;
-    await new Promise((r) => setTimeout(r, 1100));
   }
   return returnValue;
 }

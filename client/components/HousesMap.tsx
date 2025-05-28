@@ -31,28 +31,25 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
   const { min, max, data, latitude, longitude } = useMemo(() => {
     const data = houses.filter(x => typeof x.price === 'number' && x.location !== null && typeof x.location.lat === 'number' && typeof x.location.lng === 'number') ?? [];
     const sortedPrices = data.map(x => x.price!).sort((a, b) => a - b);
-    const center: [number, number] = [
-      data.reduce((p, c)=>p + c.location!.lng, 0) / data.length,
-      data.reduce((p, c)=>p + c.location!.lat, 0) / data.length,
-    ];
     return {
       data,
       min: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[1].t)],
       max: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[gradientStops.length - 2].t)],
-      longitude: isNaN(center[0]) ? 51.3347 : center[0],
-      latitude: isNaN(center[1]) ? 35.7219 : center[1],
+      longitude: data.length ? data.reduce((p, c)=>p + c.location!.lng, 0) / data.length : undefined,
+      latitude: data.length ? data.reduce((p, c)=>p + c.location!.lat, 0) / data.length : undefined,
     };
   }, [houses, gradientStops]);
 
 
   const [viewState, setViewState] = useState<MapViewState>({
-    latitude: 0,
-    longitude: 0,
+    latitude: 35.7219,
+    longitude: 51.3347,
     zoom: 13,
   });
 
   useEffect(() => {
-    setViewState(p => ({ ...p, latitude, longitude, zoom: 11 }))
+    if (typeof latitude === 'undefined' || typeof longitude === 'undefined' || isNaN(latitude) || isNaN(longitude)) return;
+    setViewState(p => ({ ...p, latitude, longitude }))
   }, [latitude, longitude]);
 
     
@@ -104,9 +101,7 @@ const gradientStops = useMemo<{ t: number; color: [number, number, number] }[]>(
       viewState={viewState}
       controller={true}
       onViewStateChange={({ viewState: newViewState }) => {
-        if (data.length) {
-          setViewState(newViewState as MapViewState)
-        }
+        setViewState(newViewState as MapViewState)
       }}
       layers={[heatLayer]}
     >

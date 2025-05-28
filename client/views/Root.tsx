@@ -7,7 +7,7 @@ import {
 import { useAsync, useAsyncFn } from "react-use";
 import { ofetch } from "ofetch";
 import { HousesMap } from "@/components/HousesMap";
-import { VscPlay, VscSaveAll, VscSettingsGear } from "react-icons/vsc";
+import { VscPlay, VscSettingsGear } from "react-icons/vsc";
 import { HousesFilters } from "@/components/HousesFilters";
 
 
@@ -72,7 +72,7 @@ export function Root() {
             <form method="dialog" className="w-full">
               <HousesFilters value={filters} onChange={setFilters} />
               <div className="divider" />
-              <button className="btn btn-block btn-primary"><VscSaveAll /> OK</button>
+              <button className="btn btn-block btn-soft">Close</button>
             </form>
           </div>
         </div>

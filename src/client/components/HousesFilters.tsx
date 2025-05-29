@@ -1,25 +1,17 @@
-import { getCities, type GetAllHousesFilters } from "@/client/api";
+import { type FetchHousesFilters } from "@/client/api";
 import { useEffect, useState } from "react";
-import { useAsync } from "react-use";
 
-export function HousesFilters({ value: _value, onChange }: { value: GetAllHousesFilters, onChange?: (newValue: GetAllHousesFilters) => void }) {
-  const [value, setValue] = useState<GetAllHousesFilters>(_value);
+type Filters = Omit<FetchHousesFilters, 'polygon'>;
 
-  const cities = useAsync(() => getCities());
+export function HousesFilters({ value: _value, onChange }: { value: Filters, onChange?: (newValue: Filters) => void }) {
+  const [value, setValue] = useState<Filters>(_value);
 
   useEffect(() => {
+    console.log(value)
     onChange?.(value);
   }, [onChange, value]);
   return (
     <div className="flex flex-col justify-between items-stretch gap-6">
-      <label className="select w-full">
-        <span className="label">City</span>
-        <select value={value.cityId} onChange={e => setValue(p => ({ ...p, cityId: e.target.value}))}>
-          { cities.value?.map((opt) => (
-            <option key={opt.id} value={opt.id}>{opt.name}</option>
-          ))}
-        </select>
-      </label>
 
       <label className="input w-full">
         <span className="label">Minimum Size</span>
@@ -46,9 +38,13 @@ export function HousesFilters({ value: _value, onChange }: { value: GetAllHouses
         </label>
       </div>
 
-      <label className="label w-full">
-        <input type="checkbox" defaultChecked={!value.exact} onChange={e => setValue(p => ({ ...p, exact: e.target.checked}))} className="checkbox" />
-        Approximate Search
+      <label className="w-full select">
+        <span className="label">Advertizer</span>
+        <select value={value.advertizer ?? ''} onChange={e => setValue(p => ({ ...p, advertizer: (e.target.value || undefined) as never }))}>
+          <option value="">All</option>
+          <option value="person">Normal Person</option>
+          <option value="business">Amlakee</option>
+        </select>
       </label>
     </div>
   )

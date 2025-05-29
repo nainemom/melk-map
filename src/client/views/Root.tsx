@@ -1,44 +1,44 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
-  getAllCityHouses,
-  type GetAllHousesFilters,
+  fetchHouses,
+  type FetchHousesFilters,
   type House,
 } from "@/client/api";
-import { useAsync, useAsyncFn } from "react-use";
-import { ofetch } from "ofetch";
+import { useAsyncFn } from "react-use";
 import { gradientStops, HousesMap } from "@/client/components/HousesMap";
 import { VscInfo, VscPlay, VscSettingsGear } from "react-icons/vsc";
 import { HousesFilters } from "@/client/components/HousesFilters";
 
 
 export function Root() {
-  const [filters, setFilters] = useState<GetAllHousesFilters>(
-    {
-      cityId: '1',
-      exact: false,
-      size: [30, 120],
-    }
-  );
+  const [filters, setFilters] = useState<Omit<FetchHousesFilters, 'polygon'>>({
+    size: [30, 120],
+    elevator: true,
+    parking: true,
+  });
+
+  const [polygon, setPolygon] = useState<FetchHousesFilters['polygon'] | undefined>();
 
   const [progress, setProgress] = useState<number>(0);
   const [progressText, setProgressText] = useState('');
-
-  const lastSavedHouses = useAsync(() => ofetch<House[]>(new URL('./tehran.json', window.location.origin + window.location.pathname).href));
   const [houses, setHouses] = useState<House[]>([]);
-  useEffect(() => {
-    setHouses(lastSavedHouses.value ?? []);
-  }, [lastSavedHouses.value]);
 
   const [crawlHouses, startCrawl] = useAsyncFn(async () => {
-    return getAllCityHouses(filters, (a, b, progressText, currentHouses) => {
-      setProgress(a / b);
-      setProgressText(progressText);
-      setHouses(currentHouses);
+    console.log('start crawl...');
+    if (!polygon) throw new Error('You must pick polygon first!');
+    return fetchHouses({
+      ...filters,
+      polygon,
+    }, (p, t, c) => {
+      console.log(`${t}: ${p}`, c.length);
+      setProgress(p);
+      setProgressText(t);
+      setHouses(c);
     }).then(() => {
       setProgress(0);
       setProgressText('');
     });
-  }, [filters]);
+  }, [filters, polygon]);
 
   return (
     <div className="h-svh w-svw relative">
@@ -46,7 +46,7 @@ export function Root() {
         { progress !== 0 && (
           <div className="flex items-start flex-col justify-between grow gap-px h-full">
             <label htmlFor="progress-bar" className="text-xs block">{progressText ? `${progressText}...` : ''}</label>
-            <progress id="progress-bar" value={progress} max="1" className="progress w-full h-2" />
+            <progress id="progress-bar" value={progress * 100} max="100" className="progress progress-primary w-full h-2" />
           </div>
         ) }
         <button
@@ -111,6 +111,8 @@ export function Root() {
 
       <HousesMap
         houses={houses ?? []}
+        polygon={polygon}
+        onChangePolygon={setPolygon}
       />
     </div>
   );

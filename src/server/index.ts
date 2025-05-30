@@ -19,7 +19,7 @@ const httpClient = ofetch.create({
 
 app.get('/divar/*', async (c) => {
   const url = c.req.path.replace(/^\/divar/g, '');
-  const payload = c.req.query('payload') ?? '{}';
+  const payload = c.req.query('payload') ?? 'e30=';
   return c.json(await httpClient(url, JSON.parse(atob(payload))));
 })
 

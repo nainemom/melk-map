@@ -123,7 +123,7 @@ export function HousesMap({
     },
     opacity: 0.05,
     stroked: false,
-    pickable: false,
+    pickable: true,
   });
 
   const geoLayer = new GeoJsonLayer({
@@ -152,6 +152,16 @@ export function HousesMap({
       controller={true}
       onViewStateChange={({ viewState: newViewState }) => {
         setViewState(newViewState as MapViewState);
+      }}
+      getTooltip={({ object }: { object?: House }) => {
+        if (!object) {
+          return null;
+        }
+        const price = object.price ? object.price.toLocaleString('fa-IR') : 'نامشخص';
+        const size = typeof object.size === 'number' ? object.size.toLocaleString('fa-IR') : 'نامشخص';
+        return `قیمت: ${price} تومان
+متراژ: ${size} متر مربع
+برای اطلاعات بیشتر کلیک کنید.`;
       }}
       layers={[heatLayer, geoLayer, hoverLayer]}
     >

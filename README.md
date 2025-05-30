@@ -33,8 +33,8 @@ Melk Map is an open-source web application that crawls apartment listings from D
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/nainemom/melk-map.git
-cd melk-map
+git clone https://github.com/nainemom/melkmap.git
+cd melkmap
 ```
 
 2. Install dependencies:
@@ -51,9 +51,9 @@ npm run dev
 
 ## Usage
 
-1. Select your desired city using the filters dialog
-2. Adjust property size range and other filters as needed
-3. Click the play button to start crawling real estate data
+1. Select your desired area using the map
+2. Adjust property size range and other filters as needed (optional)
+3. Click the Crawl button to start crawling real estate data
 4. View the results on the interactive map with color-coded price indicators
 
 ## Contributing
@@ -61,9 +61,9 @@ npm run dev
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+2. Create your feature branch (`git checkout -b my-feature-name`)
+3. Commit your changes (`git commit -m 'xyz'`)
+4. Push to the branch (`git push origin my-feature-name`)
 5. Open a Pull Request
 
 ## License

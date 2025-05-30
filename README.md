@@ -1,6 +1,6 @@
 # Melk Map
 
-Real Estate Price Visualizer for All Iranian Cities
+Real Estate Price Visualizer
 
 ## Overview
 

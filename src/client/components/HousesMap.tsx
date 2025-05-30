@@ -61,9 +61,9 @@ export function HousesMap({
   }, [houses]);
 
   const [viewState, setViewState] = useState<MapViewState>({
-    latitude: 35.7219,
-    longitude: 51.3347,
-    zoom: 13,
+    latitude: 35.7129,
+    longitude: 51.3847,
+    zoom: 10,
   });
 
   useEffect(() => {

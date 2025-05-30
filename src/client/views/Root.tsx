@@ -45,7 +45,7 @@ export function Root() {
 
   return (
     <div className="h-svh w-svw relative">
-      <div className="flex items-center justify-end backdrop-blur-sm bg-white/10 z-10 absolute bottom-2 left-1/2 -translate-x-1/2 w-xl mx-auto max-w-[calc(100svw-16px)] rounded-lg p-2 gap-2">
+      <div className="flex items-center justify-end backdrop-blur-sm backdrop-contrast-75 z-10 absolute bottom-2 left-1/2 -translate-x-1/2 w-xl mx-auto max-w-[calc(100svw-16px)] rounded-lg p-2 gap-2">
         <button
           onClick={() => {
             setPolygon(polygon ? undefined : highlightedPolygon);

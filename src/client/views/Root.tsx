@@ -103,7 +103,13 @@ export function Root() {
           <p className="text-sm mb-4">
             Melk Map is an <a href="https://github.com/nainemom/melk-map" target="_blank" className="link link-success">open-source</a> web app that crawls apartment listings from Divar.ir and visualizes real estate prices across all cities in Iran. Whether you're searching in Tehran, Mashhad, Isfahan, or smaller towns, Melk Map gives you a clear, data-driven view of the housing market.
           </p>
-          <h3 className="font-bold text-lg mb-2">Map Legends</h3>
+          <h3 className="font-bold text-lg mb-1">Map Legends</h3>
+          <p className="text-xs italic mb-2 opacity-80">
+              Note: The price ranges and color indicators are relative to the selected area only. 
+              For example, a "Very Expensive" (red) property in one area search result may be in a completely 
+              different price range than a "Very Expensive" property in another area search result. This helps you 
+              better understand price variations within each specific region.
+          </p>
           { gradientStops.map((gradientStop) => (
             <div key={gradientStop.t} className="flex items-center gap-2 mb-2 text-sm">
               <div className="rounded-full size-3" style={{ background: `rgba(${gradientStop.color.join(',')})`}}/>

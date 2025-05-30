@@ -4,10 +4,11 @@ import {
   type FetchHousesFilters,
   type House,
 } from "@/client/api";
-import { useAsyncFn } from "react-use";
+import { useAsync } from "react-use";
 import { gradientStops, HousesMap } from "@/client/components/HousesMap";
-import { VscInfo, VscPlay, VscSettingsGear } from "react-icons/vsc";
+import { VscInfo, VscSettingsGear } from "react-icons/vsc";
 import { HousesFilters } from "@/client/components/HousesFilters";
+import { LuMagnet, LuStepBack } from "react-icons/lu";
 
 
 export function Root() {
@@ -17,15 +18,17 @@ export function Root() {
     parking: true,
   });
 
+  const [highlightedPolygon, setHighlightedPolygon] = useState<FetchHousesFilters['polygon'] | undefined>();
   const [polygon, setPolygon] = useState<FetchHousesFilters['polygon'] | undefined>();
 
   const [progress, setProgress] = useState<number>(0);
   const [progressText, setProgressText] = useState('');
   const [houses, setHouses] = useState<House[]>([]);
 
-  const [crawlHouses, startCrawl] = useAsyncFn(async () => {
-    console.log('start crawl...');
-    if (!polygon) throw new Error('You must pick polygon first!');
+  const crawlHouses = useAsync(async () => {
+    if (crawlHouses.loading) return [];
+    if (!polygon) return [];
+    console.log('Start Crawl...');
     return fetchHouses({
       ...filters,
       polygon,
@@ -42,35 +45,41 @@ export function Root() {
 
   return (
     <div className="h-svh w-svw relative">
-      <div className="flex items-center justify-end backdrop-blur-sm bg-black/20 z-10 absolute bottom-0 left-0 w-full h-12 p-2 gap-2">
-        { progress !== 0 && (
-          <div className="flex items-start flex-col justify-between grow gap-px h-full">
-            <label htmlFor="progress-bar" className="text-xs block">{progressText ? `${progressText}...` : ''}</label>
-            <progress id="progress-bar" value={progress * 100} max="100" className="progress progress-primary w-full h-2" />
-          </div>
-        ) }
+      <div className="flex items-center justify-end backdrop-blur-sm bg-white/10 z-10 absolute bottom-2 left-1/2 -translate-x-1/2 w-xl mx-auto max-w-[calc(100svw-16px)] rounded-lg p-2 gap-2">
         <button
           onClick={() => {
-            startCrawl();
+            setPolygon(polygon ? undefined : highlightedPolygon);
           }}
           disabled={crawlHouses.loading}
-          className="shrink-0 btn btn-sm btn-square btn-primary"
+          className="shrink btn btn-md btn-block btn-square btn-primary"
         >
-          <VscPlay className="size-4" />
+          { polygon && progress ? (
+            <div className="flex items-center flex-col justify-between grow gap-px h-full p-2 py-1">
+              <label htmlFor="progress-bar" className="text-xs block">{progressText ? `${progressText}...` : ''}</label>
+              <progress id="progress-bar" value={progress * 100} max="100" className="progress progress-primary w-full h-2" />
+            </div>
+          ) : polygon ? (
+            <>
+              <LuStepBack className="size-5" /> Reset
+            </>
+          ) : (
+            <>
+              <LuMagnet className="size-5" /> Crawl Divar
+            </>
+          )}
         </button>
         <button
           onClick={()=>document.querySelector<HTMLDialogElement>('#filters-dialog')!.showModal()}
-          disabled={crawlHouses.loading}
-          className="shrink-0 btn btn-sm btn-square btn-soft"
+          disabled={!!polygon}
+          className="shrink-0 btn btn-md btn-square btn-soft"
         >
-          <VscSettingsGear className="size-4" />
+          <VscSettingsGear className="size-5" />
         </button>
         <button
           onClick={()=>document.querySelector<HTMLDialogElement>('#about-dialog')!.showModal()}
-          disabled={crawlHouses.loading}
-          className="shrink-0 btn btn-sm btn-soft btn-square"
+          className="shrink-0 btn btn-md btn-soft btn-square"
         >
-          <VscInfo className="size-4" />
+          <VscInfo className="size-5" />
         </button>
       </div>
 
@@ -112,7 +121,8 @@ export function Root() {
       <HousesMap
         houses={houses ?? []}
         polygon={polygon}
-        onChangePolygon={setPolygon}
+        locked={!!polygon}
+        onHighlightChange={setHighlightedPolygon}
       />
     </div>
   );

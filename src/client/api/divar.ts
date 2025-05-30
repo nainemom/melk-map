@@ -123,7 +123,7 @@ export const fetchHouses = async (filters: FetchHousesFilters, progressFn?: Prog
     }
   }
 
-  const bboxes = generateGridOverPolygon(filters.polygon, 0.8);
+  const bboxes = generateGridOverPolygon(filters.polygon, 1);
 
   progressFn?.(0, 'Start fetching...', returnValue);
 

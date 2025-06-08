@@ -4,7 +4,7 @@ import {
   type FetchHousesFilters,
   type House,
 } from "@/client/api";
-import { useAsync, useSessionStorage } from "react-use";
+import { useAsync, useLocalStorage } from "react-use";
 import { gradientStops, HousesMap } from "@/client/components/HousesMap";
 import { VscInfo, VscSettingsGear } from "react-icons/vsc";
 import { HousesFilters } from "@/client/components/HousesFilters";
@@ -12,7 +12,7 @@ import { LuMagnet, LuStepBack } from "react-icons/lu";
 
 
 export function Root() {
-  const [filters, setFilters] = useSessionStorage<Omit<FetchHousesFilters, 'polygon'>>('filters', {
+  const [filters, setFilters] = useLocalStorage<Omit<FetchHousesFilters, 'polygon'>>('filters', {
     size: [30, 120],
     price: [1_000_000, 900_000_000],
     elevator: true,

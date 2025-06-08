@@ -71,7 +71,6 @@ export function Root() {
         </button>
         <button
           onClick={()=>document.querySelector<HTMLDialogElement>('#filters-dialog')!.showModal()}
-          disabled={!!polygon}
           className="shrink-0 btn btn-md btn-square btn-soft"
         >
           <VscSettingsGear className="size-5" />

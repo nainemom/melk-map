@@ -9,7 +9,7 @@ import { LuMapPinCheckInside, LuMapPinXInside } from "react-icons/lu";
 import { booleanPointInPolygon, point } from "@turf/turf";
 import maplibregl from "maplibre-gl";
 
-const mapStyle = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
+const mapStyle = "https://map.divar.ir/back/style/prod/style-dark-view-port-v1.0.0-5be472d4.json";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const gradientStops: { t: number; color: [number, number, number]; title: string }[] = [
@@ -37,6 +37,7 @@ export function HousesMap({
   onHighlightChange?: (geometry: FetchHousesFilters["polygon"] | undefined) => void;
   locked?: boolean;
 }) {
+  const [hovered, setHovered] = useState<House | null>(null);
   const geoData = useAsync(() =>
     ofetch<GeoJSON.FeatureCollection>("/geoBoundaries-IRN-ADM4_simplified.geojson", {
       responseType: "json",
@@ -99,7 +100,7 @@ export function HousesMap({
     id: "house-layer",
     data,
     getPosition: (d: House) => [d.location?.lng ?? 0, d.location?.lat ?? 0],
-    getRadius: () => 200,
+    getRadius: () => 120,
     radiusUnits: "meters",
     getFillColor: (d: House) => {
       const price = d.price ?? 0;
@@ -119,12 +120,15 @@ export function HousesMap({
       }
       return color;
     },
+    onHover: ({ object }) => {
+      setHovered(object as House);
+    },
     onClick: ({ object }) => {
       window.open(`https://divar.ir/v/${(object as House).token}`, "_blank");
     },
-    opacity: 0.05,
+    opacity: 0.4,
     stroked: false,
-    pickable: false,
+    pickable: true,
   });
 
   const geoLayer = new GeoJsonLayer({
@@ -180,6 +184,11 @@ export function HousesMap({
 
           { highlightedPolygon ? <LuMapPinCheckInside className="size-10 fill-primary" /> : <LuMapPinXInside className="size-10 fill-primary" /> }
           
+        </div>
+      )}
+      {hovered && (
+        <div className="absolute top-0 p-2 flex items-center justify-center gap-2 left-0 pointer-events-none z-10 text-white">
+          { Math.ceil(hovered.price / 1000000).toLocaleString() }
         </div>
       )}
       {children}

@@ -188,7 +188,7 @@ export function HousesMap({
       )}
       {hovered && (
         <div className="absolute top-0 p-2 flex items-center justify-center gap-2 left-0 pointer-events-none z-10 text-white">
-          { Math.ceil(hovered.price / 1000000).toLocaleString() }
+          { Math.ceil((hovered.price * hovered.size) / 1000000).toLocaleString() }
         </div>
       )}
       {children}

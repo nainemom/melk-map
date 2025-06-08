@@ -69,7 +69,7 @@ export const fetchHouses = async (filters: FetchHousesFilters, progressFn?: Prog
               size: {number_range: { minimum: filters.size[0], maximum: filters.size[1] }},
             }),
             ...(typeof filters.price !== 'undefined' && {
-              price: {number_range: { minimum: filters.price[0], maximum: filters.price[1] }},
+              price_per_square: {number_range: { minimum: filters.price[0], maximum: filters.price[1] }},
             }),
           }
         }

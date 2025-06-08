@@ -7,7 +7,6 @@ export function HousesFilters({ value: _value, onChange }: { value: Filters, onC
   const [value, setValue] = useState<Filters>(_value);
 
   useEffect(() => {
-    console.log(value)
     onChange?.(value);
   }, [onChange, value]);
   return (
@@ -15,12 +14,22 @@ export function HousesFilters({ value: _value, onChange }: { value: Filters, onC
 
       <label className="input w-full">
         <span className="label">Minimum Size</span>
-        <input type="number" min={10} max={value.size?.[1] ?? 400} value={value.size?.[0] ?? 30} onChange={e => setValue(p => ({ ...p, size: [(e.target.valueAsNumber ?? 0), p?.size?.[1] ?? (e.target.valueAsNumber ?? 0) + 10]}))} step="5" />
+        <input type="number" min={10} max={value.size?.[1] ?? 400} value={value.size?.[0] ?? 30} onChange={e => setValue(p => ({ ...p, size: [(e.target.valueAsNumber ?? 0), p?.size?.[1] ?? (e.target.valueAsNumber ?? 0) + 10]}))} step={5} />
       </label>
 
       <label className="input w-full">
         <span className="label">Maximum Size</span>
-        <input type="number" min={value.size?.[0] ?? 10} max={400} value={value.size?.[1] ?? 120} onChange={e => setValue(p => ({ ...p, size: [p?.size?.[0] ?? (e.target.valueAsNumber ?? 0) - 10, (e.target.valueAsNumber ?? 0)]}))} step="5" />
+        <input type="number" min={value.size?.[0] ?? 10} max={400} value={value.size?.[1] ?? 120} onChange={e => setValue(p => ({ ...p, size: [p?.size?.[0] ?? (e.target.valueAsNumber ?? 0) - 10, (e.target.valueAsNumber ?? 0)]}))} step={5} />
+      </label>
+
+      <label className="input w-full">
+        <span className="label">Minimum Price Per Square (IRT)</span>
+        <input type="number" min={0} max={value.price?.[1] ?? 999_000_000} value={value.price?.[0] ?? 0} onChange={e => setValue(p => ({ ...p, price: [(e.target.valueAsNumber ?? 0), p?.price?.[1] ?? (e.target.valueAsNumber ?? 0) + 10]}))} step={1_000_000} />
+      </label>
+
+      <label className="input w-full">
+        <span className="label">Maximum Price Per Square (IRT)</span>
+        <input type="number" min={value.price?.[0] ?? 0} max={999_000_000} value={value.price?.[1] ?? 999_000_000} onChange={e => setValue(p => ({ ...p, price: [p?.price?.[0] ?? (e.target.valueAsNumber ?? 0) - 10, (e.target.valueAsNumber ?? 0)]}))} step={1_000_000} />
       </label>
 
       <div className="flex items-center gap-2 flex-nowrap w-full justify-between">

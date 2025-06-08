@@ -7,6 +7,7 @@ import { ofetch } from "ofetch";
 import type { Feature, Geometry, MultiPolygon, Polygon } from "geojson";
 import { LuMapPinCheckInside, LuMapPinXInside } from "react-icons/lu";
 import { booleanPointInPolygon, point } from "@turf/turf";
+import maplibregl from "maplibre-gl";
 
 const mapStyle = "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json";
 
@@ -155,7 +156,23 @@ export function HousesMap({
       }}
       layers={[heatLayer, geoLayer, hoverLayer]}
     >
-      <Map mapStyle={mapStyle} attributionControl={false} />
+      <Map 
+        mapStyle={mapStyle} 
+        attributionControl={false}
+        mapLib={maplibregl}
+        localIdeographFontFamily="'Vazirmatn', 'Tahoma', 'Arial', sans-serif"
+        RTLTextPlugin="https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.2.3/mapbox-gl-rtl-text.min.js"
+        onLoad={() => {
+          // Enable RTL text plugin
+          if (!maplibregl.getRTLTextPluginStatus()) {
+            maplibregl.setRTLTextPlugin(
+              'https://unpkg.com/@mapbox/mapbox-gl-rtl-text@0.2.3/mapbox-gl-rtl-text.min.js',
+              true,
+              
+            );
+          }
+        }}
+      />
       {!locked && (
         <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full pointer-events-none z-10"

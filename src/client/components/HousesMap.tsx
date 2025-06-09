@@ -11,6 +11,10 @@ import maplibregl from "maplibre-gl";
 
 const mapStyle = "https://map.divar.ir/back/style/prod/style-dark-view-port-v1.0.0-5be472d4.json";
 
+export type HousesMapConfig = {
+  colors: 'totalPrice' | 'unitPrice'
+}
+
 // eslint-disable-next-line react-refresh/only-export-components
 export const gradientStops: { t: number; color: [number, number, number]; title: string }[] = [
   { t: 0.0, color: [255, 255, 255], title: "0–15% (very cheap)" },
@@ -24,18 +28,22 @@ export const gradientStops: { t: number; color: [number, number, number]; title:
   { t: 1.0, color: [110, 0, 0], title: "Top 1–2% (extremely high-end)" },
 ];
 
+const getPrice = (d: House, c?: HousesMapConfig['colors']) => c === 'totalPrice' ? (d.price ?? 0) * (d.size ?? 0) : (d.price ?? 0);
+
 export function HousesMap({
   houses,
   children,
   polygon,
   onHighlightChange,
   locked = false,
+  config,
 }: {
   houses: House[];
   children?: ReactNode;
   polygon?: FetchHousesFilters["polygon"];
   onHighlightChange?: (geometry: FetchHousesFilters["polygon"] | undefined) => void;
   locked?: boolean;
+  config?: HousesMapConfig,
 }) {
   const [hovered, setHovered] = useState<House | null>(null);
   const geoData = useAsync(() =>
@@ -52,7 +60,7 @@ export function HousesMap({
         typeof x.location.lat === "number" &&
         typeof x.location.lng === "number"
     );
-    const sortedPrices = data.map((x) => x.price!).sort((a, b) => a - b);
+    const sortedPrices = data.map((x) => getPrice(x, config?.colors)).sort((a, b) => a - b);
     return {
       data,
       min: sortedPrices[Math.floor((sortedPrices.length - 1) * gradientStops[1].t)],
@@ -60,7 +68,7 @@ export function HousesMap({
       longitude: data.length ? data.reduce((p, c) => p + c.location!.lng, 0) / data.length : undefined,
       latitude: data.length ? data.reduce((p, c) => p + c.location!.lat, 0) / data.length : undefined,
     };
-  }, [houses]);
+  }, [config?.colors, houses]);
 
   const [viewState, setViewState] = useState<MapViewState>({
     latitude: 35.7129,
@@ -103,7 +111,7 @@ export function HousesMap({
     getRadius: () => 120,
     radiusUnits: "meters",
     getFillColor: (d: House) => {
-      const price = d.price ?? 0;
+      const price = getPrice(d, config?.colors);
       const t = (Math.max(min, Math.min(price, max)) - min) / (max - min);
       let color: [number, number, number] = gradientStops[gradientStops.length - 1].color;
       for (let i = 0; i < gradientStops.length - 1; i++) {
@@ -129,6 +137,9 @@ export function HousesMap({
     opacity: 0.4,
     stroked: false,
     pickable: true,
+    updateTriggers: {
+      getFillColor: config,
+    }
   });
 
   const geoLayer = new GeoJsonLayer({

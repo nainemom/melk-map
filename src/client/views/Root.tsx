@@ -5,7 +5,7 @@ import {
   type House,
 } from "@/client/api";
 import { useAsync, useLocalStorage } from "react-use";
-import { gradientStops, HousesMap } from "@/client/components/HousesMap";
+import { gradientStops, HousesMap, type HousesMapConfig } from "@/client/components/HousesMap";
 import { VscInfo, VscSettingsGear } from "react-icons/vsc";
 import { HousesFilters } from "@/client/components/HousesFilters";
 import { LuMagnet, LuStepBack } from "react-icons/lu";
@@ -17,6 +17,10 @@ export function Root() {
     price: [1_000_000, 900_000_000],
     elevator: true,
     parking: true,
+  });
+
+  const [mapConfig] = useLocalStorage<HousesMapConfig>('mapConfig', {
+    colors: 'unitPrice',
   });
 
   const [highlightedPolygon, setHighlightedPolygon] = useState<FetchHousesFilters['polygon'] | undefined>();
@@ -88,7 +92,7 @@ export function Root() {
           <h3 className="font-bold text-lg">Filters</h3>
           <div className="modal-action">
             <form method="dialog" className="w-full">
-              <HousesFilters value={filters} onChange={setFilters} />
+              <HousesFilters value={filters!} onChange={setFilters} />
               <div className="divider" />
               <button className="btn btn-block btn-soft">Close</button>
             </form>
@@ -129,6 +133,7 @@ export function Root() {
         polygon={polygon}
         locked={!!polygon}
         onHighlightChange={setHighlightedPolygon}
+        config={mapConfig}
       />
     </div>
   );
